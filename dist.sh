@@ -7,7 +7,7 @@ set -ex
 init(){
 cd $1
 if [ ! -d "node_modules" ]; then
-yarn
+yarn --prefer-offline --frozen-lockfile
 fi
 cd $DIR
 }
