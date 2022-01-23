@@ -19,7 +19,7 @@ OSS = new Oss({
 })
 
 DIR = dirname thisdir import.meta
-{version} = JSON.parse await readFile(
+{version, 帧享云录屏} = JSON.parse await readFile(
   join DIR,'app/package.json'
   'utf8'
 )
@@ -27,7 +27,7 @@ DIR = dirname thisdir import.meta
 export default main = =>
   dir = join DIR,'release',version
   li = []
-  title = "苹果 "+version
+  title = "苹果 帧享云录屏 "+version
   txt = [title]
   for await file from walkRel dir
     txt.push "[#{file}](https://i-desk.oss-accelerate.aliyuncs.com/#{url})"
