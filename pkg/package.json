@@ -1,0 +1,8 @@
+{
+  "type": "module",
+  "devDependencies": {
+    "@rmw/walk": "^0.0.6",
+    "ali-oss": "^6.16.0",
+    "@rmw/thisdir": "^0.0.2"
+  }
+}
