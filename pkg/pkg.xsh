@@ -129,7 +129,7 @@ def win():
       f.write(response.read())
   @(pdir+"ISCC.exe") .\@(inno)
 
-  out = f"{VERSION}/{NAME}-{VERSION}-win-{arch}."
+  out = f"{VERSION}/{NAME}-{VERSION}-win.{arch}."
   mv app.exe @(out)exe
 
   try:
