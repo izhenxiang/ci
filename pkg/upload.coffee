@@ -6,6 +6,7 @@ import {dirname,join} from 'path'
 import Oss from 'ali-oss'
 import {readFile} from 'fs/promises'
 import {createReadStream} from 'fs'
+import push from './push'
 
 {accessKeySecret,accessKeyId} = process.env
 
@@ -26,15 +27,17 @@ DIR = dirname thisdir import.meta
 export default main = =>
   dir = join DIR,'release',version
   li = []
+  msg = []
   for await file from walkRel dir
     url = version+"/"+file
-    console.log "https://i-desk.oss-accelerate.aliyuncs.com/"+url
-
+    msg.push url
     li.push OSS.putStream(
       url
       createReadStream join(dir,file)
     )
   await Promise.all li
+
+  console.log "https://i-desk.oss-accelerate.aliyuncs.com/"+url
   return
 
 if process.argv[1] == decodeURI (new URL(import.meta.url)).pathname

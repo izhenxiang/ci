@@ -32,4 +32,6 @@ jobs:
         env:
           accessKeyId: ${{ secrets.accessKeyId }}
           accessKeySecret: ${{ secrets.accessSecret }}
+        run: ./dist.sh
 
+    
