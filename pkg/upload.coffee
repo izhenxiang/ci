@@ -38,7 +38,9 @@ export default main = =>
   li = []
   title = OS_NAME + " 帧享云录屏 "+version
   txt = []
+  console.log dir
   for await file from walkRel dir
+    console.log '>', file
     url = version+"/"+file
     txt.push "[#{file}](https://i-desk.oss-accelerate.aliyuncs.com/#{url})"
     li.push OSS.putStream(
