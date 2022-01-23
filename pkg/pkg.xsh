@@ -8,7 +8,7 @@ $XONSH_TRACE_SUBPROC = True
 
 import shutil
 from pathlib import Path
-from os import remove
+from os import remove, makedirs
 from mako.template import Template
 from os.path import dirname,abspath,join,exists
 from shutil import which
@@ -42,7 +42,8 @@ PACKAGE = loads(read(PKG_JSON))
 
 NAME = PACKAGE['productName']
 VERSION = PACKAGE['version']
-mkdir -p @(RELEASE)/@(VERSION)
+mkdir -p
+makedirs(f"{RELEASE}/{VERSION}", exist_ok=True)
 
 def darwin():
   for platform in ['mas','darwin']:
