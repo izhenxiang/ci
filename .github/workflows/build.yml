@@ -7,7 +7,8 @@ jobs:
     strategy:
       matrix:
         # platform: [windows-latest] 
-        platform: [macos-latest,windows-latest]
+        platform: [macos-latest]
+          #platform: [macos-latest,windows-latest]
         python-version: [3.9]
     runs-on: ${{ matrix.platform }}
     steps:
@@ -32,6 +33,7 @@ jobs:
         env:
           accessKeyId: ${{ secrets.accessKeyId }}
           accessKeySecret: ${{ secrets.accessSecret }}
+          PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
         run: ./dist.sh
 
     

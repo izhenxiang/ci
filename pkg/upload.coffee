@@ -31,7 +31,6 @@ export default main = =>
   for await file from walkRel dir
     txt.push "[#{file}](https://i-desk.oss-accelerate.aliyuncs.com/#{url})"
     url = version+"/"+file
-    msg.push url
     li.push OSS.putStream(
       url
       createReadStream join(dir,file)
