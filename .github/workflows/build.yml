@@ -11,8 +11,8 @@ jobs:
     strategy:
       matrix:
         # platform: [windows-latest] 
-        platform: [macos-latest]
-          #platform: [macos-latest,windows-latest]
+        # platform: [macos-latest]
+        platform: [macos-latest,windows-latest]
         python-version: [3.9]
     runs-on: ${{ matrix.platform }}
     steps:

@@ -26,7 +26,7 @@ DIR = dirname thisdir import.meta
 )
 
 platform = os.platform()
-if platform  == 'darwin'
+if platform == 'darwin'
   OS_NAME = '苹果'
 else if platform.startswith('win')
   OS_NAME = '视窗'
