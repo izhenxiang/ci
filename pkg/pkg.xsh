@@ -108,9 +108,11 @@ def win():
     Template(read(join(TEMPLATE,inno))).render(**PACKAGE)
   )
 
+  arch = 'x64'
+
   cd @(RELEASE)
   shutil.rmtree(NAME, ignore_errors=True)
-  Path(NAME+"-win32-x64").rename(NAME)
+  Path(NAME+f"-win32-{arch}").rename(NAME)
 
   for i in (
     join(NAME, "LICENSE"),
@@ -133,7 +135,7 @@ def win():
     pip3 install py7zr
     import py7zr
 
-  with py7zr.SevenZipFile("app.7z", 'w') as z:
+  with py7zr.SevenZipFile(f"{VERSION}/{NAME}-{VERSION}-{arch}.7z", 'w') as z:
     z.writeall('./'+NAME)
 
 def _platform():
