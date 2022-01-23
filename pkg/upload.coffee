@@ -27,7 +27,8 @@ DIR = dirname thisdir import.meta
 export default main = =>
   dir = join DIR,'release',version
   li = []
-  txt = []
+  title = "苹果 "+version
+  txt = [title]
   for await file from walkRel dir
     txt.push "[#{file}](https://i-desk.oss-accelerate.aliyuncs.com/#{url})"
     url = version+"/"+file
@@ -37,7 +38,6 @@ export default main = =>
     )
   await Promise.all li
 
-  title = "苹果 "+version
   await push title, txt.join('\n')
   return
 
