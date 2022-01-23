@@ -16,11 +16,13 @@ cd pkg/app
 
 npm version patch
 
-VER=`cat package.json| jq '.version' -r`
+VER=v`cat package.json| jq '.version' -r`
 
 cd $DIR
 
 cat pkg/app/package.json | jq -c > app/package.json
 git add -u
-git commit -m "v$VER"
-git push
+git commit -m $VER
+git tag $VER
+git push $VER
+
