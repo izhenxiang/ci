@@ -11,14 +11,6 @@ import os from 'os'
 
 {accessKeySecret,accessKeyId} = process.env
 
-OSS = new Oss({
-  endpoint: 'oss-cn-beijing.aliyuncs.com'
-  region: 'oss-cn-zhangjiakou'
-  bucket: 'i-desk'
-  accessKeyId
-  accessKeySecret
-})
-
 DIR = dirname thisdir import.meta
 {version, 帧享云录屏} = JSON.parse await readFile(
   join DIR,'app/package.json'
@@ -34,24 +26,45 @@ else
   OS_NAME = platform
 
 export default main = =>
+  OSS = new Oss({
+    endpoint: 'oss-cn-beijing.aliyuncs.com'
+    region: 'oss-cn-zhangjiakou'
+    bucket: 'i-desk'
+    accessKeyId
+    accessKeySecret
+  })
+
   dir = join DIR,'release',version
   li = []
   title = OS_NAME + " 帧享云录屏 "+version
   txt = []
-  console.log dir
-  for await file from walkRel dir
+
+  upload = (file)=>
     console.log '>', file
     url = version+"/"+file
     txt.push "[#{file}](https://i-desk.oss-accelerate.aliyuncs.com/#{url})"
-    li.push OSS.putStream(
-      url
-      createReadStream join(dir,file)
-    )
+    loop
+      try
+        await OSS.putStream(
+          url
+          createReadStream join(dir,file)
+        )
+        return
+      catch err
+        console.error err
+        continue
+    return
+
+  console.log dir
+  for await file from walkRel dir
+    li.push upload(file)
   await Promise.all li
 
   await push title, txt.join('\n\n')
   return
 
+console.log process.argv
+console.log decodeURI (new URL(import.meta.url)).pathname
 if process.argv[1] == decodeURI (new URL(import.meta.url)).pathname
   await main()
   process.exit()
