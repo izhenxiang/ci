@@ -13,7 +13,7 @@ jobs:
     runs-on: ${{ matrix.platform }}
     steps:
       - name: Install dependencies on macOS
-        if: startsWith(matrix.os, 'macos')
+        if: startsWith(matrix.platform, 'macos')
         run: |
           brew install coreutils
 
