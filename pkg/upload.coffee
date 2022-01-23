@@ -27,8 +27,9 @@ DIR = dirname thisdir import.meta
 export default main = =>
   dir = join DIR,'release',version
   li = []
-  msg = []
+  txt = []
   for await file from walkRel dir
+    txt.push "[#{file}](https://i-desk.oss-accelerate.aliyuncs.com/#{url})"
     url = version+"/"+file
     msg.push url
     li.push OSS.putStream(
@@ -37,7 +38,8 @@ export default main = =>
     )
   await Promise.all li
 
-  console.log "https://i-desk.oss-accelerate.aliyuncs.com/"+url
+  title = "苹果 "+version
+  await push title, txt.join('\n')
   return
 
 if process.argv[1] == decodeURI (new URL(import.meta.url)).pathname
