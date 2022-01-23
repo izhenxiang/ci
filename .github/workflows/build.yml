@@ -31,8 +31,8 @@ jobs:
 
       - name: build
         env:
-          accessKeyId: ${{ secrets.accessKeyId }}
-          accessKeySecret: ${{ secrets.accessSecret }}
+          accessKeyId: ${{ secrets.ACCESSKEYID }}
+          accessKeySecret: ${{ secrets.ACCESSKEYSECRET }}
           PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
         run: ./dist.sh
 
