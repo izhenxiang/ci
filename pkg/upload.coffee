@@ -63,9 +63,7 @@ export default main = =>
   await push title, txt.join('\n\n')
   return
 
-console.log process.argv
-console.log decodeURI (new URL(import.meta.url)).pathname
-if process.argv[1] == decodeURI (new URL(import.meta.url)).pathname
+do =>
   await main()
   process.exit()
 
