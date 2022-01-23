@@ -24,5 +24,5 @@ cat pkg/app/package.json | jq -c > app/package.json
 git add -u
 git commit -m $VER
 git tag $VER
-git push $VER
+git push origin $VER
 
