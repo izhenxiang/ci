@@ -26,11 +26,11 @@ jobs:
         with:
           node-version: '17.4.0'
   
-      - uses: c-hive/gha-yarn-cache@v2
-
       - uses: actions/checkout@v2
         with:
           fetch-depth: 1
+      
+      - uses: c-hive/gha-yarn-cache@v2
       
       - name: pip3 install
         run: |
