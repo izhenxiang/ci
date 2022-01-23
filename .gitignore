@@ -2,4 +2,4 @@
 /release/
 node_modules
 /config.sh
-
+yarn.lock
