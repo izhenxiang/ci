@@ -129,13 +129,16 @@ def win():
       f.write(response.read())
   @(pdir+"ISCC.exe") .\@(inno)
 
+  out = "{VERSION}/{NAME}-{VERSION}-{arch}."
+  mv app.exe @(out)exe
+
   try:
     import py7zr
   except ImportError:
     pip3 install py7zr
     import py7zr
 
-  with py7zr.SevenZipFile(f"{VERSION}/{NAME}-{VERSION}-{arch}.7z", 'w') as z:
+  with py7zr.SevenZipFile(f"{out}7z", 'w') as z:
     z.writeall('./'+NAME)
 
 def _platform():

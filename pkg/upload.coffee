@@ -7,6 +7,7 @@ import Oss from 'ali-oss'
 import {readFile} from 'fs/promises'
 import {createReadStream} from 'fs'
 import push from './push'
+import os from 'os'
 
 {accessKeySecret,accessKeyId} = process.env
 
@@ -24,10 +25,18 @@ DIR = dirname thisdir import.meta
   'utf8'
 )
 
+platform = os.platform()
+if platform  == 'darwin'
+  OS_NAME = '苹果'
+else if platform.startswith('win')
+  OS_NAME = '视窗'
+else
+  OS_NAME = platform
+
 export default main = =>
   dir = join DIR,'release',version
   li = []
-  title = "苹果 帧享云录屏 "+version
+  title = OS_NAME + " 帧享云录屏 "+version
   txt = []
   for await file from walkRel dir
     txt.push "[#{file}](https://i-desk.oss-accelerate.aliyuncs.com/#{url})"
@@ -42,6 +51,7 @@ export default main = =>
   return
 
 if process.argv[1] == decodeURI (new URL(import.meta.url)).pathname
-  await main()
+  #await main()
+  console.log os.platform()
   process.exit()
 
