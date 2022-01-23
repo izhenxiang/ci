@@ -42,9 +42,10 @@ jobs:
 
       - name: build
         env:
+          PYTHONIOENCODING: utf8
           accessKeyId: ${{ secrets.ACCESSKEYID }}
           accessKeySecret: ${{ secrets.ACCESSKEYSECRET }}
           PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
         run: ./dist.sh
-
+        shell: bash
     
