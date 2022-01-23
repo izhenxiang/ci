@@ -12,6 +12,11 @@ jobs:
         python-version: [3.9]
     runs-on: ${{ matrix.platform }}
     steps:
+      - name: Install dependencies on macOS
+        if: startsWith(matrix.os, 'macos')
+        run: |
+          brew install coreutils
+
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
         with:
@@ -20,6 +25,8 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '17.4.0'
+  
+      - uses: c-hive/gha-yarn-cache@v2
 
       - uses: actions/checkout@v2
         with:
