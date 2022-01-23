@@ -28,7 +28,7 @@ export default main = =>
   dir = join DIR,'release',version
   li = []
   title = "苹果 帧享云录屏 "+version
-  txt = [title]
+  txt = []
   for await file from walkRel dir
     txt.push "[#{file}](https://i-desk.oss-accelerate.aliyuncs.com/#{url})"
     url = version+"/"+file
@@ -38,7 +38,7 @@ export default main = =>
     )
   await Promise.all li
 
-  await push title, txt.join('\n')
+  await push title, txt.join('\n\n')
   return
 
 if process.argv[1] == decodeURI (new URL(import.meta.url)).pathname

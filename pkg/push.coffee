@@ -12,7 +12,7 @@ export default main = (title, txt)=>
       token:process.env.PUSHPLUS_TOKEN
       title
       topic: 'izhenxiang-desk'
-      content:md.render txt
+      content:title + "\n" + md.render txt
       template:'html'
     }
   )
