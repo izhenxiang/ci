@@ -42,7 +42,6 @@ PACKAGE = loads(read(PKG_JSON))
 
 NAME = PACKAGE['productName']
 VERSION = PACKAGE['version']
-mkdir -p
 makedirs(f"{RELEASE}/{VERSION}", exist_ok=True)
 
 def darwin():
