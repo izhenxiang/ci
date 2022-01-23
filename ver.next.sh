@@ -25,4 +25,4 @@ git add -u
 git commit -m $VER
 git tag $VER
 git push origin $VER
-
+git push
