@@ -1,0 +1,10 @@
+{
+  "type": "module",
+  "devDependencies": {
+    "@rmw/axios": "^0.0.16",
+    "@rmw/thisdir": "^0.0.2",
+    "@rmw/walk": "^0.0.6",
+    "ali-oss": "^6.16.0",
+    "markdown-it": "^12.3.2"
+  }
+}
