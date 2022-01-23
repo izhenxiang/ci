@@ -5,7 +5,6 @@ import thisdir from '@rmw/thisdir'
 import {dirname,join} from 'path'
 import Oss from 'ali-oss'
 import {readFile} from 'fs/promises'
-import {createReadStream} from 'fs'
 import push from './push'
 import os from 'os'
 
@@ -43,17 +42,11 @@ export default main = =>
     console.log '>', file
     url = version+"/"+file
     txt.push "[#{file}](https://i-desk.oss-accelerate.aliyuncs.com/#{url})"
-    loop
-      try
-        await OSS.putStream(
-          url
-          createReadStream join(dir,file)
-        )
-        return
-      catch err
-        console.error err
-        continue
-    return
+    OSS.multipartUpload(
+      url
+      join(dir,file)
+      timeout: 120000
+    )
 
   console.log dir
   for await file from walkRel dir
