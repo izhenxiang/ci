@@ -44,11 +44,6 @@ NAME = PACKAGE['productName']
 VERSION = PACKAGE['version']
 makedirs(f"{RELEASE}/{VERSION}", exist_ok=True)
 
-def darwin():
-  for platform in ['mas','darwin']:
-    for arch in ['arm64','x64']:
-      _darwin(platform, arch)
-
 def _darwin(platform, arch):
   build(
     "icns",
@@ -97,6 +92,11 @@ def _darwin(platform, arch):
   rm -rf @(fp)
   hdiutil convert @(tmp) -format ULMO -o @(app)
   rm -rf @(tmp)
+
+def darwin():
+  for platform in ['mas','darwin']:
+    for arch in ['arm64','x64']:
+      _darwin(platform, arch)
 
 def win():
 
