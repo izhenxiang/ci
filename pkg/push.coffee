@@ -11,12 +11,9 @@ export default main = (title, txt)=>
     {
       token:process.env.PUSHPLUS_TOKEN
       title
+      topic: 'izhenxiang-desk'
       content:md.render txt
       template:'html'
     }
   )
 
-main(
-  "测试"
-  "[a](http://ss)"
-)
