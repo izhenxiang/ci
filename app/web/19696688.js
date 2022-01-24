@@ -1,1 +1,0 @@
-var c=r=>{var e;return e=a=>new Proxy(()=>{},{apply:(o,t,v)=>r(a.join("."),v),get:(o,t)=>e([...a,t])}),e([])},i=c(E.invoke);var s=new BroadcastChannel("rec"),f=new Proxy(()=>{},{get:(r,e)=>(...a)=>{a.unshift(e),s.postMessage(a)}}),n,l=n={};s.onmessage=async({data:r})=>{var e;e=r.shift(),await(typeof n[e]=="function"?n[e](...r):void 0)};export{l as O,f as b,i};
