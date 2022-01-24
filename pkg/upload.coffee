@@ -1,6 +1,6 @@
 #!/usr/bin/env coffee
 
-import {upload} from './oss.coffee'
+import Oss from './oss.coffee'
 import {walkRel} from '@rmw/walk'
 import thisdir from '@rmw/thisdir'
 import {dirname,join} from 'path'
@@ -8,6 +8,7 @@ import {readFile} from 'fs/promises'
 import push from './push'
 import os from 'os'
 
+OSS = Oss 'i-desk'
 
 DIR = dirname thisdir import.meta
 {version, 帧享云录屏} = JSON.parse await readFile(
@@ -34,7 +35,7 @@ export default main = =>
     console.log '>', file
     url = version+"/"+file
     txt.push "[#{file}](https://i-desk.oss-accelerate.aliyuncs.com/#{url})"
-    upload(
+    OSS.upload(
       url
       join(dir,file)
     )
