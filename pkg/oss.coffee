@@ -18,11 +18,17 @@ class Oss
 
 
   put_if_not_exist:(url,bin)->
-    return
     try
-      @_.head(url)
+      await @_.head(url)
     catch err
-      console.log err
+      if err.status != 404
+        throw err
+      loop
+        try
+          return await @_.put(url,bin)
+        catch err
+          console.trace err
+          continue
     return
 
   upload:(url, file, checkpoint)->

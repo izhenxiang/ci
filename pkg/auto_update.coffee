@@ -19,7 +19,7 @@ OSS = Oss 'i-ver'
 HASH = 'sha3-256'
 
 hash_bin = (bin)=>
-  createHash(HASH).update(bin).digest()
+  createHash(HASH).update(bin).digest()[..15]
 
 hash = (fp)=>
   h = createHash HASH
@@ -32,7 +32,7 @@ hash = (fp)=>
     ).on(
       'end'
       =>
-        resolve encode h.digest()
+        resolve encode h.digest()[..15]
     )
 
 
@@ -58,7 +58,7 @@ walkRel = (dir, len)->
 put = (bin)=>
   bin = await brotliCompress bin
   h = hash_bin(bin)
-  OSS.put_if_not_exist(
+  await OSS.put_if_not_exist(
     encode(h)
     bin
   )
