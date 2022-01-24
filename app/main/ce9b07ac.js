@@ -1,0 +1,1 @@
+"use strict";exports[Symbol.toStringTag]="Module";var e=require("fs"),o=require("path"),a,n,s;({$root:a}=process);n=o.join(a,"conf");e.mkdirSync(n,{recursive:!0});s=t=>o.join(n,t);var f=new Proxy({},{set:function(t,i,r){return e.writeFileSync(s(i),JSON.stringify(r)),r},get:(t,i)=>{var r;if(r=s(i),e.existsSync(r))return JSON.parse(e.readFileSync(r))}});exports.default=f;
