@@ -1,14 +1,13 @@
 #!/usr/bin/env coffee
 
+import {upload} from './oss.coffee'
 import {walkRel} from '@rmw/walk'
 import thisdir from '@rmw/thisdir'
 import {dirname,join} from 'path'
-import Oss from 'ali-oss'
 import {readFile} from 'fs/promises'
 import push from './push'
 import os from 'os'
 
-{accessKeySecret,accessKeyId} = process.env
 
 DIR = dirname thisdir import.meta
 {version, 帧享云录屏} = JSON.parse await readFile(
@@ -25,32 +24,23 @@ else
   OS_NAME = platform
 
 export default main = =>
-  OSS = new Oss({
-    endpoint: 'oss-cn-beijing.aliyuncs.com'
-    region: 'oss-cn-zhangjiakou'
-    bucket: 'i-desk'
-    accessKeyId
-    accessKeySecret
-    timeout: 300000
-    retryMax: 9
-  })
 
   dir = join DIR,'release',version
   li = []
   title = OS_NAME + " 帧享云录屏 "+version
   txt = []
 
-  upload = (file)=>
+  _upload = (file)=>
     console.log '>', file
     url = version+"/"+file
     txt.push "[#{file}](https://i-desk.oss-accelerate.aliyuncs.com/#{url})"
-    OSS.multipartUpload(
+    upload(
       url
       join(dir,file)
     )
 
   for await file from walkRel dir
-    li.push upload(file)
+    li.push _upload(file)
   await Promise.all li
 
   await push title, txt.join('\n\n')
