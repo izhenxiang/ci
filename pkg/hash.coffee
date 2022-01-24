@@ -1,5 +1,6 @@
 #!/usr/bin/env coffee
 
+import {encode} from 'urlsafe-base64'
 import {tmpdir} from 'os'
 import thisdir from '@rmw/thisdir'
 import {walkRel} from '@rmw/walk'
@@ -20,7 +21,7 @@ export default main = =>
   app = join DIR,"release/#{productName}-darwin-x64/#{productName}.app/Contents/Resources/app.asar"
 
   hash = createHash 'sha3-256'
-  hash = new Promise (resolve)=>
+  hash = await new Promise (resolve)=>
     createReadStream(
       app
     ).on(
@@ -29,7 +30,7 @@ export default main = =>
     ).on(
       'end'
       =>
-        resolve hash
+        resolve encode hash.digest()
     )
   console.log hash
   #console.log tmpdir()
