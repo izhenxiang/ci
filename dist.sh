@@ -21,5 +21,11 @@ pip3 install -r requirements.txt
 fi
 
 ./pkg/pkg.xsh
-.direnv/bin/coffee ./pkg/upload.coffee
 
+if [ $AUTO_UPDATE ];then
+script=auto_update
+else
+script=upload
+fi
+
+.direnv/bin/coffee ./pkg/$script.coffee

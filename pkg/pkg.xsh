@@ -8,7 +8,7 @@ $XONSH_TRACE_SUBPROC = True
 
 import shutil
 from pathlib import Path
-from os import remove, makedirs
+from os import remove, makedirs, getenv
 from mako.template import Template
 from os.path import dirname,abspath,join,exists
 from shutil import which
@@ -94,9 +94,13 @@ def _darwin(platform, arch):
   rm -rf @(tmp)
 
 def darwin():
+  for_auto_update = getenv('AUTO_UPDATE')
   for arch in ['x64','arm64']:
     for platform in ['darwin','mas']:
       _darwin(platform, arch)
+      if for_auto_update:
+        break
+
 
 def win():
 
