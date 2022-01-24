@@ -10,7 +10,8 @@ OSS = new Oss({
   bucket: 'i-desk'
   accessKeyId
   accessKeySecret
-  retryMax: 9
+  #timeout:5000
+  #retryMax: 9
 })
 
 export upload = (url, file, checkpoint)=>
@@ -28,7 +29,7 @@ export upload = (url, file, checkpoint)=>
     ).then(
       resolve
       (err)=>
-        console.error err
+        console.error url, err
         await upload url, file, checkpoint
         resolve()
         return
