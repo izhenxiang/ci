@@ -3,7 +3,7 @@
 import {brotliCompress as _brotliCompress} from 'zlib'
 import { promisify } from 'util'
 brotliCompress = promisify _brotliCompress
-import {upload} from './oss'
+import Oss from './oss'
 import {encode} from 'urlsafe-base64'
 import {tmpdir} from 'os'
 import thisdir from '@rmw/thisdir'
@@ -14,13 +14,11 @@ import asar from 'asar'
 import {createHash} from 'crypto'
 
 DIR = dirname thisdir import.meta
-
+OSS = Oss 'i-ver'
 HASH = 'sha3-256'
 
 hash_bin = (bin)=>
   encode createHash(HASH).update(bin).digest()
-
-
 
 hash = (fp)=>
   h = createHash HASH
@@ -72,11 +70,11 @@ pack = (app, dir)=>
   return
 
 export default main = =>
-  {productName} = JSON.parse await readFile(
+  {productName, version} = JSON.parse await readFile(
     join DIR,'app/package.json'
     'utf8'
   )
-
+  console.log version
   app = join DIR,"release/#{productName}-darwin-x64/#{productName}.app/Contents/Resources/app.asar"
 
   outdir = join tmpdir(), await hash(app)
