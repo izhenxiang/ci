@@ -73,6 +73,7 @@ auto_update = (app, dir)=>
   file_li = []
   hash_li = []
   for await [isDir, fp] from walkRel(dir)
+    console.log fp
     if isDir
       dir_li.push fp
     else

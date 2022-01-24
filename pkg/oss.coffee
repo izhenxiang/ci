@@ -18,6 +18,7 @@ class Oss
 
 
   put_if_not_exist:(url,bin)->
+    return
     try
       @_.head(url)
     catch err
