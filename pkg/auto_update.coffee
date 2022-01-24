@@ -84,7 +84,22 @@ auto_update = (app, dir)=>
     dir_li, file_li, hash_li
   ])
   ver = await put(ver)
-  console.log ver
+
+  v = Buffer.allocUnsafe(6)
+  v.writeUIntLE(
+    parseInt(new Date()/1000)
+    0
+    6
+  )
+
+  await OSS._.put(
+    encode v
+    ver
+  )
+  await OSS._.put(
+    "v"
+    v
+  )
   #console.log file,await hash(join dir,file)
   return
 
