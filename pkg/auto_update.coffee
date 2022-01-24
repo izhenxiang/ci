@@ -1,5 +1,6 @@
 #!/usr/bin/env coffee
 
+import { unpack, pack } from 'msgpackr'
 import {brotliCompress as _brotliCompress} from 'zlib'
 import { promisify } from 'util'
 brotliCompress = promisify _brotliCompress
@@ -18,7 +19,7 @@ OSS = Oss 'i-ver'
 HASH = 'sha3-256'
 
 hash_bin = (bin)=>
-  encode createHash(HASH).update(bin).digest()
+  createHash(HASH).update(bin).digest()
 
 hash = (fp)=>
   h = createHash HASH
@@ -53,19 +54,36 @@ walkRel = (dir, len)->
     yield [1,dir[len..]]
   return
 
-pack = (app, dir)=>
+
+put = (bin)=>
+  bin = await brotliCompress bin
+  h = hash_bin(bin)
+  OSS.put_if_not_exist(
+    encode(h)
+    bin
+  )
+  h
+
+auto_update = (app, dir)=>
   asar.extractAll(
     app
     dir
   )
   dir_li = []
+  file_li = []
+  hash_li = []
   for await [isDir, fp] from walkRel(dir)
     if isDir
       dir_li.push fp
     else
-      bin = await brotliCompress await readFile(join(dir,fp))
-      console.log bin.length, hash_bin bin
-  console.log dir_li
+      file_li.push fp
+      hash_li.push await put await readFile(join(dir,fp))
+
+  ver = pack([
+    dir_li, file_li, hash_li
+  ])
+  ver = await put(ver)
+  console.log ver
   #console.log file,await hash(join dir,file)
   return
 
@@ -80,7 +98,7 @@ export default main = =>
   outdir = join tmpdir(), await hash(app)
 
   try
-    await pack app, outdir
+    await auto_update app, outdir
   finally
     await rm(outdir,recursive: true, force: true)
   return

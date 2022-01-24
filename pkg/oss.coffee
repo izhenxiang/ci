@@ -16,6 +16,14 @@ class Oss
       #retryMax: 9
     })
 
+
+  put_if_not_exist:(url,bin)->
+    try
+      @_.head(url)
+    catch err
+      console.log err
+    return
+
   upload:(url, file, checkpoint)->
     new Promise (resolve)=>
       @_.multipartUpload(
