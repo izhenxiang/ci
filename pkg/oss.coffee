@@ -10,20 +10,26 @@ OSS = new Oss({
   bucket: 'i-desk'
   accessKeyId
   accessKeySecret
-  timeout: 120000
   retryMax: 9
 })
 
-export upload = (url, file)=>
+export upload = (url, file, checkpoint)=>
   new Promise (resolve)=>
     OSS.multipartUpload(
       url
       file
+      {
+        checkpoint
+        progress:(p,ckp)=>
+          console.log (Math.round(p*10000)/100)+"%", ckp.name
+          checkpoint = ckp
+          return
+      }
     ).then(
       resolve
       (err)=>
         console.error err
-        await upload file
+        await upload url, file, checkpoint
         resolve()
         return
     )
