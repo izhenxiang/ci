@@ -1,6 +1,6 @@
 #!/usr/bin/env coffee
 
-import { unpack, pack } from 'msgpackr'
+import { pack } from 'msgpackr'
 import {brotliCompress as _brotliCompress} from 'zlib'
 import { promisify } from 'util'
 brotliCompress = promisify _brotliCompress
@@ -84,24 +84,22 @@ auto_update = (app, dir)=>
     dir_li, file_li, hash_li
   ])
   ver = await put(ver)
-
-  v = Buffer.allocUnsafe(6)
-  v.writeUIntLE(
-    parseInt(new Date()/1000)
-    0
-    6
-  )
-
-  await OSS._.put(
-    encode v
-    ver
-  )
-  await OSS._.put(
-    "v"
-    v
-  )
   #console.log file,await hash(join dir,file)
-  return
+  return ver
+
+ver_bin = (version)=>
+  version = version.split(".")
+  bin = Buffer.allocUnsafe 2*version.length
+  offset = 0
+  for i from version
+    bin.writeUIntLE(
+      i-0
+      offset
+      2
+    )
+    offset+=2
+  bin
+
 
 export default main = =>
   {productName, version} = JSON.parse await readFile(
@@ -114,9 +112,19 @@ export default main = =>
   outdir = join tmpdir(), await hash(app)
 
   try
-    await auto_update app, outdir
+    ver = await auto_update app, outdir
   finally
     await rm(outdir,recursive: true, force: true)
+
+  v = ver_bin version
+  await OSS._.put(
+    encode v
+    ver
+  )
+  await OSS._.put(
+    "v"
+    v
+  )
   return
 
 do =>
