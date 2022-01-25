@@ -10,7 +10,7 @@ import os from 'os'
 
 OSS = Oss 'i-desk'
 
-{version, 帧享云录屏} = JSON.parse await readFile(
+{version, productName, description} = JSON.parse await readFile(
   join DIR,'app/package.json'
   'utf8'
 )
@@ -27,7 +27,7 @@ export default main = =>
 
   dir = join DIR,'release',version
   li = []
-  title = OS_NAME + " 帧享云录屏 "+version
+  title = OS_NAME + " #{productName} "+version
   txt = []
 
   _upload = (file)=>
@@ -38,7 +38,10 @@ export default main = =>
       url
       join(dir,file)
     )
-
+  txt = txt.concat [
+    "更新日志 :"
+    description
+  ]
   for await file from walkRel dir
     li.push _upload(file)
   await Promise.all li
