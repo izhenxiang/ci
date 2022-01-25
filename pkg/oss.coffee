@@ -37,6 +37,7 @@ class Oss
         url
         file
         {
+          parallel:1
           checkpoint
           progress:(p,ckp)=>
             console.log (Math.round(p*10000)/100)+"%", ckp.name
