@@ -9,13 +9,13 @@ read = (fp)=>
   readFile(fp,'utf8')
 
 pkg_json = 'package.json'
+fp_app_package = join DIR,'pkg/app/'+pkg_json
 
 do =>
-  fp_app_package = join DIR,'pkg/app/'+pkg_json
 
   package_json = JSON.parse await read fp_app_package
-  {version} = package_json
-  version = version.split('.').map((x)=>parseInt(x))
+  {version:version_now} = package_json
+  version = version_now.split('.').map((x)=>parseInt(x))
 
   pos = 2
   while pos
@@ -26,13 +26,20 @@ do =>
     version[pos] += 1
     break
 
-  package_json.version = version = version.join '.'
+  code = 0
+  if await write(package_json, version.join('.')) == false
+    code = 1
+    await write(package_json, version_now)
+  process.exit code
 
+
+
+write = (package_json, version)=>
+  package_json.version = version
   fp = join(DIR,'ver', version+'.md')
   if not existsSync fp
     console.error fp,'not exist'
-    process.exit(1)
-    return
+    return false
 
   await writeFile(
     fp_app_package
@@ -46,7 +53,7 @@ do =>
     )
     JSON.stringify package_json
   )
-
+  return true
 
 
 
