@@ -4,6 +4,8 @@ DIR=$(dirname $(realpath "$0"))
 cd $DIR
 set -ex
 
+./.direnv/bin/coffee ./pkg/package_json.coffee
+
 git add app
 git add -u
 git commit -m '⭕️' || true
@@ -14,15 +16,13 @@ fi
 
 cd pkg/app
 
-npm version patch
 
 VER=v`cat package.json| jq '.version' -r`
 
 cd $DIR
 
-#cat pkg/app/package.json | jq -c > app/package.json
-git add -u
-git commit -m $VER
-git tag $VER
-git push origin $VER
-git push
+#git add -u
+#git commit -m $VER
+#git tag $VER
+#git push origin $VER
+#git push
