@@ -21,9 +21,6 @@ VER=v`cat package.json| jq '.version' -r`
 
 cd $DIR
 
-git add .
-git add -u
-git commit -m $VER
 git tag $VER
 git push origin $VER
 git push
