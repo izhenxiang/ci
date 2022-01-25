@@ -30,7 +30,7 @@ do =>
 
   fp = join(DIR,'ver', version+'.md')
   if not existsSync fp
-    console.log fp,'not exist'
+    console.error fp,'not exist'
     process.exit(1)
     return
 
