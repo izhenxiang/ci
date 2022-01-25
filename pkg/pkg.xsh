@@ -28,6 +28,8 @@ def write(fp,txt):
 
 ROOT = dirname(dirname(abspath(__file__)))
 
+./@(ROOT)/pkg/package.json.xsh
+
 cat @(ROOT)/pkg/app/package.json | jq -c > @(ROOT)/app/package.json
 
 APP = join(ROOT,"app")
