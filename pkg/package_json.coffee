@@ -34,6 +34,10 @@ do =>
     process.exit(1)
     return
 
+  await writeFile(
+    fp_app_package
+    JSON.stringify package_json
+  )
   package_json.description = await read fp
 
   await writeFile(
