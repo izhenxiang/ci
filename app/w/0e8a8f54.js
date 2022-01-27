@@ -1,9 +1,0 @@
-import{i as q}from"./f055c35d.js";import{b as S,O as y}from"./c73e65f4.js";import{c as d}from"./08f73616.js";import{h as w}from"./48db47c4.js";import{d as z,s as N,B as n,q as t,F as p,D as B,v as I,C as $,E as f,y as D,z as E,o as i,G as F}from"./9426e368.js";import{_ as R}from"./index.js";var _,m,v,h,O,u,g,T,b,k,C;({recbar:g}=q);[O,T,C,k]=w();b=e=>{var a,s,o;s=e.split(`
-`),o=[];for(a of s)o.push(a.split(" "));return o};u=N(!1);_=!1;v=N();h={stop:()=>{k(),S.stop(),g.stop()},pause:()=>{var e;({value:e}=u),e=!e,S.pause(u.value=e),!!_&&m(e)}};m=e=>{[C,k][e-0]()};y.start=()=>{C(),_=!0,v.value.className=""};y.pause=e=>{u.value=e,m(e)};var x={setup:()=>{var e,a,s,o,r,c,j;for(s=b(`audio \u9EA6\u514B\u98CE
-video \u6444\u50CF\u5934`),c=z(b(`pause \u6682\u505C
-stop \u7ED3\u675F\u5F55\u5236
-reset \u91CD\u7F6E\u5F55\u5236
-cancel \u53D6\u6D88\u5F55\u5236
-pen \u753B\u7B14
-square \u6846\u9009
-left \u6536\u8D77`)),j=l=>()=>{d[l]=d[l]?"":localStorage[l]},r=["audio","video"],a=0,o=r.length;a<o;a++)e=r[a],h[e]=j(e);return{go:l=>{(h[l]||g[l])()},left:s,right:c,code:v,minute:O,second:T,pause:u,config:d}}};const V=e=>(D("data-v-4dfe0984"),e=e(),E(),e),A={class:"expand"},G=["title","onClick"],L=V(()=>t("b",null,null,-1)),H={class:"pause",ref:"code"},J=V(()=>t("span",null,":",-1)),K=["title","onClick"],M={key:0};function P(e,a){return i(),n(p,null,[t("div",A,[t("a",{onClick:a[0]||(a[0]=s=>e.go("expand"))})]),t("nav",{class:f({pause:e.pause})},[(i(!0),n(p,null,B(e.left,([s,o],r)=>(i(),n("a",{class:f([s,e.config[s]?"":"x"]),title:o,onClick:c=>e.go(s)},null,10,G))),256)),L,t("code",H,[I($(e.minute),1),J,I($(e.second),1)],512),(i(!0),n(p,null,B(e.right,([s,o],r)=>(i(),n(p,null,[t("a",{class:f([s]),title:o,onClick:c=>e.go(s)},null,10,K),[3].indexOf(r)+1?(i(),n("b",M)):F("",!0)],64))),256))],2)],64)}var ee=R(x,[["render",P],["__scopeId","data-v-4dfe0984"]]);export{ee as default};

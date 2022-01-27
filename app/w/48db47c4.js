@@ -1,1 +1,0 @@
-import{s as l}from"./9426e368.js";var n;n=r=>(r+"").padStart(2,"0");var i=()=>{var r,a,v,s;return r=l("00"),a=l("00"),[s,v]=(()=>{var t,e;return e=0,t=void 0,[()=>{t=setInterval(()=>{++e,r.value=n(parseInt(e/60)),a.value=n(e%60)},1e3)},()=>{clearInterval(t)}]})(),[r,a,s,v]};export{i as h};
