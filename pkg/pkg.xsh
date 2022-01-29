@@ -32,7 +32,14 @@ APP = join(ROOT,"app")
 PKG = join(ROOT,"pkg")
 TEMPLATE = join(PKG,"template")
 RELEASE = join(ROOT,"release")
-PKG_JSON = join(PKG,"app/package.json")
+
+app_package_json = "app/package.json"
+
+PKG_JSON = join(PKG,app_package_json)
+APP_JSON = join(ROOT,app_package_json)
+
+if not exists(APP_JSON):
+  cp @(PKG_JSON) @(APP_JSON)
 
 def build(ico, args=""):
   cd @(APP)
@@ -40,7 +47,7 @@ def build(ico, args=""):
   @(exe+args.split(' '))
   cd @(ROOT)
 
-PACKAGE = loads(read(PKG_JSON))
+PACKAGE = loads(read(APP_JSON))
 
 NAME = PACKAGE['productName']
 VERSION = PACKAGE['version']
