@@ -1,0 +1,6 @@
+.DS_Store
+/release/
+/tmp/
+node_modules
+/config.sh
+yarn.lock
