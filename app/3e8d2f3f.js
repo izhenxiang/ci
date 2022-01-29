@@ -1,1 +1,0 @@
-import{i}from"./f055c35d.js";import{c as t}from"./7720bbc7.js";var a,o;({rec:o}=i);a="src,audio,video,area".split(",");var e=()=>{var s;o(...function(){var r;r=[];for(s of a)r.push(t[s]);return r}())};export{e as s};

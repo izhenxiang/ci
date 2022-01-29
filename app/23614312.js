@@ -1,1 +1,0 @@
-const h="-0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz",i=h.split(""),n=new Array(123);for(let t=0;t<h.length;t++)n[h.charCodeAt(t)]=t;const r=t=>{if(t<0)return`-${ntob(-t)}`;let e=t>>>0,l=t/4294967296>>>0,o="";for(;l>0;)o=i[63&e]+o,e>>>=6,e|=(63&l)<<26,l>>>=6;let s="";do s=i[63&e]+s,e>>>=6;while(e>0);return s+o};export{r as e};
