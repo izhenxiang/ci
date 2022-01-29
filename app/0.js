@@ -1,1 +1,1 @@
-"use strict";exports[Symbol.toStringTag]="Module";var o=require("fs"),e=require("path"),s=require("os"),a,r;({name:r}=JSON.parse(o.readFileSync(e.join(process.dir,"package.json"),"utf8")));a=r.replace(/\./g,"_");var i=process.env[a+"_root"]||e.join(s.homedir(),"."+r);exports.ROOT=i;
+var t=new Proxy({},{get:(i,r)=>a=>{var e;return e={},e[r]={deviceId:{exact:a}},navigator.mediaDevices.getUserMedia(e)}});export{t as m};
