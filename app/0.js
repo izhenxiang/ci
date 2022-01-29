@@ -1,1 +1,1 @@
-var i=n=>{var r;return r=e=>new Proxy(()=>{},{apply:(a,t,p)=>n(e.join("."),p),get:(a,t)=>r([...e,t])}),r([])},o=i(E.invoke);export{o as i};
+"use strict";exports[Symbol.toStringTag]="Module";var o=require("fs"),e=require("path"),s=require("os"),a,r;({name:r}=JSON.parse(o.readFileSync(e.join(process.dir,"package.json"),"utf8")));a=r.replace(/\./g,"_");var i=process.env[a+"_root"]||e.join(s.homedir(),"."+r);exports.ROOT=i;
