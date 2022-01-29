@@ -104,6 +104,7 @@ def _darwin(platform, arch):
   rm -rf @(tmp)
 
 def darwin():
+  cp @(PKG)/mac/i.plist @(APP)/
   for arch in ['x64','arm64']:
     for platform in ['darwin','mas']:
       _darwin(platform, arch)
