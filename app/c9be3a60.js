@@ -1,1 +1,0 @@
-"use strict";exports[Symbol.toStringTag]="Module";var s=require("fs"),e=require("path"),i=require("os"),a,o,r;({dir:o}=process);({name:r}=JSON.parse(s.readFileSync(e.join(o,"package.json"),"utf8")));a=r.replace(/\./g,"_");var n=process.env[a+"_root"]||e.join(i.homedir(),"."+r);exports.ROOT=n;
