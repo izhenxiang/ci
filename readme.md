@@ -15,6 +15,8 @@ package.json 中要写`=17.0.0-beta.1`，把'^'改成'='
 
 ## 调试
 
-比如你的 app 是 X.app ，那么应该可以在命令行里 app 所在目录下运行类似：./X.app/Contents/MacOS/X 这样的命令启动，然后就能看到 electron 里 console.log 输出的内容了。
+./debug.sh
 
+## 如何签名
 
+https://github.com/electron/electron-osx-sign/issues/77

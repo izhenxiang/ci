@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "asar": "^3.1.0",
+    "electron-osx-sign": "^0.6.0",
     "msgpackr": "^1.5.2",
     "urlsafe-base64": "^1.0.0"
   }
