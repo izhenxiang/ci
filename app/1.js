@@ -1,1 +1,1 @@
-var s=new BroadcastChannel("rec"),v=[],c=(r=!1)=>{var a;return a={},s.addEventListener("message",async({data:n})=>{var e;e=n[0],await(typeof a[e]=="function"?a[e](...n.slice(1)):void 0)}),r&&v.push(a),a},o=c();export{c as N,o as O,s as c,v as h};
+import{h as f,c as r}from"./3.js";var i=new Proxy(()=>{},{get:(s,o)=>(...t)=>{var e;for(e of f)typeof e[o]=="function"&&e[o](...t);t.unshift(o),r.postMessage(t)}});export{i as b};

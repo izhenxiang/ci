@@ -1,1 +1,3 @@
-import{s as r}from"./d.js";var a=r.draw({shape:"pen"});export{a as D};
+import{b as d}from"./2.js";import{i as o}from"./4.js";import{b as c}from"./v.js";import{M as _}from"./8.js";import{d as s,e as i,q as u,o as p,k as l,u as n,E as m,v,l as f,y as h}from"./0.js";import{_ as b}from"./e.js";import"./f.js";var j={components:{btn:c},setup:()=>{var e,a;return a=s(),e=s(),i(async()=>{var t,r;return[r,t]=await o.auto_update.update(),a.value=d(r),e.value=_(`\u66F4\u65B0\u65E5\u5FD7:
+
+`+t)}),{md:e,ver:a,relaunch:()=>{o.auto_update.relaunch()}}}};const k={class:"page"},y=["innerHTML"],M=h("\u70B9\u6B64\u91CD\u542F\u5E94\u7528\u66F4\u65B0");function x(e,a){const t=u("btn");return p(),l("div",k,[n("main",null,[n("h3",null,"\u81EA\u52A8\u5347\u7EA7\u6210\u529F ( \u7248\u672C "+m(e.ver)+")",1),n("main",{innerHTML:e.md},null,8,y)]),v(t,{onClick:e.relaunch},{default:f(()=>[M]),_:1},8,["onClick"])])}var E=b(j,[["render",x],["__scopeId","data-v-1108c2a5"]]);export{E as default};
