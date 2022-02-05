@@ -1,1 +1,1 @@
-import{h as f,c as r}from"./3.js";var i=new Proxy(()=>{},{get:(s,o)=>(...t)=>{var e;for(e of f)typeof e[o]=="function"&&e[o](...t);t.unshift(o),r.postMessage(t)}});export{i as b};
+var t=new Proxy({},{get:(i,r)=>a=>{var e;return e={},e[r]={deviceId:{exact:a}},navigator.mediaDevices.getUserMedia(e)}});export{t as m};

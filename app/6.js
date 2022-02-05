@@ -1,1 +1,1 @@
-var t=new Proxy({},{get:(i,r)=>a=>{var e;return e={},e[r]={deviceId:{exact:a}},navigator.mediaDevices.getUserMedia(e)}});export{t as m};
+import{i}from"./0.js";import{c as t}from"./.js";var s,o;({rec:o}=i);s="src,audio,video,area".split(",");var e=()=>{var a;o(...function(){var r;r=[];for(a of s)r.push(t[a]);return r}())};export{e as s};

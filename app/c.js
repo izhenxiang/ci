@@ -1,1 +1,1 @@
-import{i}from"./4.js";import{c as t}from"./.js";var s,o;({rec:o}=i);s="src,audio,video,area".split(",");var e=()=>{var a;o(...function(){var r;r=[];for(a of s)r.push(t[a]);return r}())};export{e as s};
+"use strict";var e=require("electron");(async()=>(await e.app.whenReady(),await Promise.resolve().then(function(){return require("./f.js")})))();
