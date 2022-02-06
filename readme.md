@@ -5,13 +5,11 @@
 国内配置 `.yarnrc` 如下
 
 ```
-registry "http://mirrors.cloud.tencent.com/npm/"
-electron_custom_dir "17.0.0-beta.1"
-electron_custom_filename "electron-v17.0.0-beta.1-darwin-x64.zip"
+registry "https://registry.npm.taobao.org"
+disturl "https://npm.taobao.org/dist"
 electron_mirror "https://npm.taobao.org/mirrors/electron/"
 ```
 
-package.json 中要写`=17.0.0-beta.1`，把'^'改成'='
 
 ## 调试
 
