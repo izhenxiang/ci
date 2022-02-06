@@ -1,1 +1,1 @@
-"use strict";var e=require("electron");(async()=>(await e.app.whenReady(),await Promise.resolve().then(function(){return require("./8.js")})))();
+"use strict";exports[Symbol.toStringTag]="Module";var o=require("fs"),t=require("electron"),r=require("path"),a,e;({name:e}=JSON.parse(o.readFileSync(r.join(process.dir,"package.json"),"utf8")));a=e.replace(/\./g,"_");exports.ROOT=process.env[a+"_root"];exports.ROOT||(exports.ROOT=r.join(t.app.getPath("userData"),e));exports.ROOT=exports.ROOT;

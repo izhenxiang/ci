@@ -1,1 +1,1 @@
-import{m as d}from"./2.js";import{c as f}from"./.js";var a,m=a=async function(i){var e,r,o,t;if(e=localStorage[i],e&&(r=await d[i](e),r)){if(t=r.getTracks(),!f[i])for(o of t)o.enabled=!1;return r}return[]},c=a.bind(a,"audio");a.bind(a,"video");export{c as a,m};
+var t=new Proxy({},{get:(i,r)=>a=>{var e;return e={},e[r]={deviceId:{exact:a}},navigator.mediaDevices.getUserMedia(e)}});export{t as m};

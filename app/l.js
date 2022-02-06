@@ -1,1 +1,1 @@
-import{s as r}from"./f.js";var a=r.draw({shape:"pen"});export{a as D};
+"use strict";var e=require("electron");(async()=>(await e.app.whenReady(),await Promise.resolve().then(function(){return require("./i.js")})))();
