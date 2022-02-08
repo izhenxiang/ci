@@ -1,1 +1,1 @@
-"use strict";exports[Symbol.toStringTag]="Module";var t=require("fs"),o=require("electron"),r=require("path"),a,e;({name:e}=JSON.parse(t.readFileSync(r.join(process.dir,"package.json"),"utf8")));a=e.replace(/\./g,"_");exports.ROOT=process.env[a+"_root"];exports.ROOT||(exports.ROOT=r.join(o.app.getPath("userData"),e));exports.ROOT=exports.ROOT;
+import{s as r}from"./j.js";var o=r.record({src:"all",area:0});export{o as c};
