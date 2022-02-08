@@ -21,30 +21,28 @@ def install(bin, pkg):
 
 def build_icns():
   ICNS = join(DIR,"pkg/ico/app.icns")
-  if not exists(ICNS):
-    install("rsvg-convert", "librsvg")
-    mkdir -p @(dirname(ICNS))
-    tmpdir = mkdtemp()
-    pngdir = join(tmpdir,"icons.iconset")
-    mkdir -p @(pngdir)
-    cd @(pngdir)
-    for i in range(4,10):
-      size = (2**i)
-      filename = f"icon_{size}x{size}"
-      for j,suffix in ((1,""),(2,"@2x")):
-        $size = j*size
-        # 完全透明的地方mac下没法点击，必须要有个背景
-        rsvg-convert -b "#00000001" -a -h $size -w $size @(SVG) > @(filename)@(suffix).png
+  install("rsvg-convert", "librsvg")
+  mkdir -p @(dirname(ICNS))
+  tmpdir = mkdtemp()
+  pngdir = join(tmpdir,"icons.iconset")
+  mkdir -p @(pngdir)
+  cd @(pngdir)
+  for i in range(4,10):
+    size = (2**i)
+    filename = f"icon_{size}x{size}"
+    for j,suffix in ((1,""),(2,"@2x")):
+      $size = j*size
+      # 完全透明的地方mac下没法点击，必须要有个背景
+      rsvg-convert -b "#00000001" -a -h $size -w $size @(SVG) > @(filename)@(suffix).png
 
-    iconutil -c icns @(pngdir) -o @(ICNS)
-    rm -rf @(tmpdir)
+  iconutil -c icns @(pngdir) -o @(ICNS)
+  rm -rf @(tmpdir)
 
 build_icns()
 
 def build_ico():
   ico = join(DIR,"pkg/ico/app.ico")
-  if not exists(ico):
-    install('convert','imagemagick')
+  install('convert','imagemagick')
   png = join(DIR,"pkg/ico/app.png")
   rsvg-convert -h 512 -w 512 @(SVG) > @(png)
   convert -background transparent @(png) -define icon:auto-resize=16,32,48,64,128,256 @(ico)
