@@ -1,1 +1,5 @@
-<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1643592448107" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1029" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32"><path d="M914.1990408 431.56019185h-322.27972533V109.8009592H432.03336643v321.75923265H109.8009592v160.8796163h322.27972533v321.75923265h159.83863094v-321.75923265H914.1990408v-160.8796163z" fill="#FFF" p-id="1030"></path><path d="M860.02046393 485.7387687h-321.75923263V163.41172529h-52.5224626v322.32704341h-321.75923263v52.5224626h321.75923263v322.32704341h52.5224626v-322.32704341h321.75923263v-52.5224626z" fill="#f00" p-id="1031"></path></svg>
+<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.8262 30.6838L14.7208 22H21.2792L24.1738 30.6838C24.3897 31.3313 23.9077 32 23.2251 32H12.7749C12.0923 32 11.6103 31.3313 11.8262 30.6838Z" stroke="#474D59" stroke-width="2"/>
+<circle cx="18" cy="15" r="10" fill="white" stroke="#474D59" stroke-width="2"/>
+<circle cx="18" cy="15" r="5" fill="white" stroke="#474D59" stroke-width="2"/>
+</svg>
