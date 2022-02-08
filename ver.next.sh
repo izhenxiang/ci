@@ -11,7 +11,7 @@ git add -u
 git commit -m '⭕️' || true
 
 if [ ! -f "./pkg/ico/app.icns" ]; then
-./misc/ico.xsh
+./pkg/ico.xsh
 fi
 
 cd pkg/app
