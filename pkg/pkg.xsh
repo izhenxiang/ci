@@ -160,6 +160,14 @@ def _platform():
     platform = platform[:5]
   elif platform.startswith("win"):
     platform = platform[:3]
+
+  if platform == 'darwin':
+    tray = 'black'
+  else:
+    tray = 'color'
+
+  cp @(PKG)/tray/@(tray)/*.png @(APP)
+
   return platform
 
 locals()[_platform()]()
