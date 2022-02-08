@@ -8,7 +8,7 @@ from os.path import dirname,abspath,join
 DIR = dirname(dirname(abspath(join(__file__))))
 
 # SVG 必须是正方形，不然生成MAC的图标会报错
-SVG = join(DIR,"app/web/ico.svg")
+SVG = join(DIR,"pkg/ico/ico.svg")
 
 from os.path import exists
 from tempfile import mkdtemp,mktemp
