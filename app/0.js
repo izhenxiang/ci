@@ -1,1 +1,1 @@
-import{h as f,c as r}from"./1.js";var i=new Proxy(()=>{},{get:(s,o)=>(...t)=>{var e;for(e of f)typeof e[o]=="function"&&e[o](...t);t.unshift(o),r.postMessage(t)}});export{i as b};
+var i=n=>{var r;return r=e=>new Proxy(()=>{},{apply:(a,t,p)=>n(e.join("."),p),get:(a,t)=>r([...e,t])}),r([])},o=i(E.invoke);export{o as i};

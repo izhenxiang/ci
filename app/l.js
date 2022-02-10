@@ -1,1 +1,1 @@
-import{s as r}from"./k.js";var o=r.record({src:"all",area:0});export{o as c};
+import{m as d}from"./2.js";import{c as f}from"./r.js";var a,s=a=async function(i){var o,r,e,t;if(o=localStorage[i],o&&(r=await d[i](o),r)){if(t=r.getTracks(),!f[i])for(e of t)e.enabled=!1;return r}return[]},c=a.bind(a,"audio");a.bind(a,"video");export{c as a,s as m};
