@@ -1,1 +1,1 @@
-"use strict";exports[Symbol.toStringTag]="Module";var t=require("path"),i=require("fs"),f=require("./i.js");require("electron");var s,a;s=t.join(f.ROOT,"conf");a=n=>{var r;return r=t.join(s,n),i.mkdirSync(t.dirname(r),{recursive:!0}),r};var u=new Proxy({},{set:function(n,r,e){return i.writeFileSync(a(r),JSON.stringify(e)),e},get:(n,r)=>{var e;if(e=a(r),i.existsSync(e))return JSON.parse(i.readFileSync(e))}});exports.default=u;
+var t=new Proxy({},{get:(i,r)=>a=>{var e;return e={},e[r]={deviceId:{exact:a}},navigator.mediaDevices.getUserMedia(e)}});export{t as m};
