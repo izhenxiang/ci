@@ -1,1 +1,1 @@
-import{s as r}from"./w.js";var o=r.record({src:"all",area:0});export{o as c};
+import{k as t,B as r,o as n}from"./6.js";import{_}from"./_.js";var o={setup:()=>{}};function a(e,s){return n(),t("button",null,[r(e.$slots,"default",{},void 0,!0)])}var c=_(o,[["render",a],["__scopeId","data-v-71ed6340"]]);export{c as b};

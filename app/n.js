@@ -1,1 +1,1 @@
-import{s as r}from"./w.js";var s=r.draw({shape:"pen"});export{s as D};
+import{s as r}from"./v.js";var o=r.record({src:"all",area:0});export{o as c};
