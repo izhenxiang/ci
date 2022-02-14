@@ -1,1 +1,1 @@
-import{i as t}from"./1.js";var o;({recbar:o}=t);var c=async()=>{var e,r,a;a={audio:{mandatory:{chromeMediaSource:"desktop"}},video:{mandatory:{chromeMediaSourceId:await o.screen_source(),chromeMediaSource:"desktop"}}},e=()=>navigator.mediaDevices.getUserMedia(a);try{r=await e()}catch{delete a.audio,r=await e()}return r};export{c as v};
+import{k as t,B as r,o as n}from"./a.js";import{_}from"./f.js";var o={setup:()=>{}};function a(e,s){return n(),t("button",null,[r(e.$slots,"default",{},void 0,!0)])}var c=_(o,[["render",a],["__scopeId","data-v-71ed6340"]]);export{c as b};
