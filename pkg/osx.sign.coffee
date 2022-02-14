@@ -8,7 +8,7 @@ DIR = thisdir import.meta
 
 do =>
   entitlements = join DIR,'mac/i.plist'
-  app = '/Users/z/git/rv/ci/release/帧享云录屏-darwin-x64/帧享云录屏.app'
+  app = '/Users/z/git/rv/ci/release/帧享-darwin-x64/帧享.app'
   await signAsync {
     app
     verbose:true
