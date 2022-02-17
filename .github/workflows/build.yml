@@ -16,10 +16,13 @@ jobs:
         python-version: [3.9]
     runs-on: ${{ matrix.platform }}
     steps:
-      - name: Install dependencies on macOS
+      - name: 苹果打包初始化
         if: startsWith(matrix.platform, 'macos')
+        env:
+          keychain_password : ${{ secrets }}
         run: |
           brew install coreutils
+          ./pkg/mac/import.sign.sh
 
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
