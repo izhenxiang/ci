@@ -60,6 +60,9 @@ def _darwin(platform, arch):
   )
   if FOR_AUTO_UPDATE:
     return
+
+  @(ROOT)/.direnv/bin/coffee @(PKG)/osx.sign.coffee @(RELEASE)/@(NAME)-@(platform)-@(arch)/@(NAME).app
+
   config = {
     "title": NAME,
     "format": "UDRO",
@@ -90,6 +93,7 @@ def _darwin(platform, arch):
   name = NAME
   if platform != "darwin":
     name += "-"+platform
+
   app_name = f"{name}-{VERSION}-{arch}.dmg"
   app = join(
     RELEASE,
@@ -100,6 +104,7 @@ def _darwin(platform, arch):
   rm -rf @(tmp)
   npx --yes appdmg @(fp) @(tmp)
   rm -rf @(fp)
+
   hdiutil convert @(tmp) -format ULMO -o @(app)
   rm -rf @(tmp)
 

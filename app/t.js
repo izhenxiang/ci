@@ -1,1 +1,1 @@
-import{m as d}from"./0.js";import{c as f}from"./r.js";var a,s=a=async function(o){var r,i,e,t;if(r=localStorage[o],r&&(i=await d[o](r),i)){if(t=i.getTracks(),!f[o])for(e of t)e.enabled=!1;return i}},c=a.bind(a,"audio");a.bind(a,"video");export{c as a,s as m};
+(function(){"use strict";self.onmessage=({data:[t,o,c,d,e,a]})=>{var n,s;n=new OffscreenCanvas(e,a),s=n.getContext("2d",{alpha:!1,desynshronized:!0}),t.pipeThrough(new TransformStream({transform:(r,f)=>{s.drawImage(r,c,d,e,a,0,0,e,a),f.enqueue(new VideoFrame(n)),r.close()}})).pipeTo(o)}})();

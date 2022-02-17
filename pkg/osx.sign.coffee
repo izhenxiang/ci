@@ -6,12 +6,11 @@ import thisdir from '@rmw/thisdir'
 
 DIR = thisdir import.meta
 
-do =>
-  entitlements = join DIR,'mac/i.plist'
-  app = join dirname(DIR),'release/帧享-darwin-x64/帧享.app'
-  console.log app
 
-  console.log 'sign'
+do =>
+  [app] = process.argv.slice(2)
+  entitlements = join DIR,'mac/i.plist'
+  console.log 'sign', app
   await signAsync {
     app
     verbose:true

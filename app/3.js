@@ -1,1 +1,1 @@
-import{i as s}from"./..js";import{c as t}from"./r.js";var o,i;({rec:i}=s);o="src,audio,video,area".split(",");var f=()=>{var a;i(...function(){var r;r=[];for(a of o)r.push(t[a]);return r}())};export{f as s};
+var i=n=>{var r;return r=e=>new Proxy(()=>{},{apply:(a,t,p)=>n(e.join("."),p),get:(a,t)=>r([...e,t])}),r([])},o=i(E.invoke);export{o as i};
