@@ -18,3 +18,7 @@ electron_mirror "https://npm.taobao.org/mirrors/electron/"
 ## 如何签名
 
 https://github.com/electron/electron-osx-sign/issues/77
+
+
+Electron 打包Mac安装包代码签名问题解决方案
+http://alonesuperman.com/?p=77
