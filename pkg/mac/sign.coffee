@@ -1,0 +1,37 @@
+#!/usr/bin/env coffee
+
+import {appBundleId} from './config.mjs'
+import {notarize} from 'electron-notarize'
+import {join,dirname} from 'path'
+import {signAsync} from 'electron-osx-sign'
+import thisdir from '@rmw/thisdir'
+
+DIR = thisdir import.meta
+
+do =>
+  {argv,env} = process
+  [app] = argv.slice(2)
+
+  entitlements = join DIR,'i.plist'
+  console.log 'sign', app
+  await signAsync {
+    app
+    verbose:true
+    entitlements
+    'entitlements-inherit':entitlements
+  }
+  console.log 'signed'
+
+  console.log '开始公证'
+  await notarize({
+    appBundleId
+    tool:'notarytool'
+    appPath:app
+    #TODO
+    appleApiKey:'/Users/z/.appstoreconnect/private_keys/AuthKey_N9JA6C75TV.p8'
+    appleApiKeyId:env.appleApiKeyId
+    appleApiIssuer:env.appleApiIssuer
+  })
+  console.log '公证上传完成'
+
+  process.exit()
