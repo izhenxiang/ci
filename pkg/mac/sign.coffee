@@ -20,6 +20,7 @@ do =>
     app
     verbose:true
     hardenedRuntime:true
+    gatekeeperAssess:false
     entitlements
     'entitlements-inherit':entitlements
   }
