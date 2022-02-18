@@ -35,7 +35,8 @@ DIR = thisdir(import.meta);
     app,
     verbose: true,
     hardenedRuntime: true,
-    gatekeeperAssess: false,
+    //gatekeeperAssess:false
+    'gatekeeper-assess': false,
     entitlements,
     'entitlements-inherit': entitlements
   });
