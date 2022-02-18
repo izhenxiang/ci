@@ -4,6 +4,7 @@
 #define MyAppName "${productName}"
 #define MyAppVersion "0.0.1"
 #define MyAppExeName "${productName}.exe"
+#define MyAppURL "https://izhenxiang.com"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
