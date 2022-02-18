@@ -44,7 +44,7 @@ DIR = thisdir(import.meta);
   console.log('开始公证');
   await notarize({
     appBundleId,
-    //tool:'notarytool'
+    tool: 'notarytool',
     appPath: app,
     teamId: env.teamId,
     appleId: env.appleId,
