@@ -1,5 +1,7 @@
 #!/usr/bin/env coffee
 
+process.env.DEBUG = 'electron-notarize*'
+
 import {appBundleId} from './config.mjs'
 import {notarize} from 'electron-notarize'
 import {join,dirname} from 'path'
@@ -12,17 +14,16 @@ do =>
   {argv,env} = process
   [app] = argv.slice(2)
 
-  ###
   entitlements = join DIR,'i.plist'
   console.log 'sign', app
   await signAsync {
     app
     verbose:true
+    hardenedRuntime:true
     entitlements
     'entitlements-inherit':entitlements
   }
   console.log 'signed'
-  ###
 
   console.log '开始公证'
   await notarize({
