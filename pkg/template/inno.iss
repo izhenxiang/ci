@@ -3,7 +3,6 @@
 
 #define MyAppName "${productName}"
 #define MyAppVersion "0.0.1"
-#define MyAppURL "${homepage}"
 #define MyAppExeName "${productName}.exe"
 
 [Setup]
