@@ -65,52 +65,69 @@ def _darwin(platform, arch):
   if FOR_AUTO_UPDATE:
     return
 
-  node @(PKG)/mac/sign.js @(RELEASE)/@(NAME)-@(platform)-@(arch)/@(NAME).app
-
-  config = {
-    "title": NAME,
-    "format": "UDRO",
-    "icon": f"{PKG}/ico/app.icns",
-    "contents": [{
-      "x": 448,
-      "y": 344,
-      "type": "link",
-      "path": "/Applications"
-    },
-    {
-      "x": 192,
-      "y": 344,
-      "type": "file",
-      "path": f"./{NAME}-{platform}-{arch}/{NAME}.app"
-    }
-    ],
-    "window": {
-      "size": {
-        "width": 640,
-        "height": 480
-      }
-    }
-  }
-  fp = join(RELEASE,f"mac.{platform}.{arch}.json")
-  write(fp, dumps(config))
+  app_path = f"{NAME}-{platform}-{arch}/{NAME}.app"
+  app_fullpath = f"{RELEASE}/{app_path}"
+  node @(PKG)/mac/sign.js @(app_fullpath)
 
   name = NAME
-  if platform != "darwin":
-    name += "-"+platform
 
-  app_name = f"{name}-{VERSION}-{arch}.dmg"
+  is_mas = platform == "mas"
+
+  if is_mas:
+    suffix = "pkg"
+  else:
+    suffix = "dmg"
+
+  app_name = f"{name}-{VERSION}-{arch}.{suffix}"
+
   app = join(
     RELEASE,
     VERSION+'/'+app_name
   )
-  tmp = join(RELEASE, f"tmp.{app_name}")
-  rm -rf @(app)
-  rm -rf @(tmp)
-  npx --yes appdmg @(fp) @(tmp)
-  rm -rf @(fp)
 
-  hdiutil convert @(tmp) -format ULMO -o @(app)
-  rm -rf @(tmp)
+  rm -rf @(app)
+
+  if is_mas:
+    @(PKG)/mac/quickpkg/quickpkg @(app_fullpath) --out @(app)
+  else:
+    config = {
+      "title": NAME,
+      "format": "UDRO",
+      "icon": f"{PKG}/ico/app.icns",
+      "contents": [{
+        "x": 448,
+        "y": 344,
+        "type": "link",
+        "path": "/Applications"
+      },
+      {
+        "x": 192,
+        "y": 344,
+        "type": "file",
+        "path": f"../{app_path}"
+      }
+      ],
+      "window": {
+        "size": {
+          "width": 640,
+          "height": 480
+        }
+      }
+    }
+
+    tmpdir = join(RELEASE,f"tmp")
+    rm -rf @(tmpdir)
+    mkdir -p @(tmpdir)
+    fp = join(tmpdir,f"mac.{platform}.{arch}.json")
+
+    write(fp, dumps(config))
+
+    tmp = join(tmpdir, f"{app_name}")
+
+    npx --yes appdmg @(fp) @(tmp)
+    hdiutil convert @(tmp) -format ULMO -o @(app)
+    rm -rf @(tmp)
+
 
 def darwin():
   @(PKG)/mac/import.sign.sh
