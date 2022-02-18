@@ -1,13 +1,1 @@
-{
-  "main": "m.js",
-  "version": "0.0.94",
-  "devDependencies": {
-    "electron": "=17.0.0"
-  },
-  "hardenedRuntime": true,
-  "extendInfo": {
-    "NSMicrophoneUsageDescription": "请授权麦克风",
-    "NSCameraUsageDescription": "请授权摄像头"
-  },
-  "license": "UNLICENSED"
-}
+{"main":"m.js","version":"0.0.95","devDependencies":{"electron":"=17.0.0"},"hardenedRuntime":true,"extendInfo":{"NSMicrophoneUsageDescription":"请授权麦克风","NSCameraUsageDescription":"请授权摄像头"},"license":"UNLICENSED"}
