@@ -65,7 +65,6 @@ jobs:
 
       - name: build
         env:
-          DEBUG: electron-osx-sign*
           appleIdPassword: ${{ secrets.APPLEIDPASSWORD }}
           appleId: ${{ secrets.APPLEID }}
           teamId: ${{ secrets.TEAMID }}
