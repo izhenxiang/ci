@@ -126,7 +126,7 @@ def _darwin(platform, arch):
 
     npx --yes appdmg @(fp) @(tmp)
     hdiutil convert @(tmp) -format ULMO -o @(app)
-    rm -rf @(tmp)
+    rm -rf @(tmpdir)
 
 
 def darwin():
