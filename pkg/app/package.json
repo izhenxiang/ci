@@ -3,7 +3,7 @@
   "productName": "帧享",
   "version": "0.0.95",
   "devDependencies": {
-    "electron": "=17.0.0"
+    "electron": "=17.0.1"
   },
   "hardenedRuntime": true,
   "extendInfo": {

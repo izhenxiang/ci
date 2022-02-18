@@ -41,6 +41,9 @@ DIR = thisdir(import.meta);
     'entitlements-inherit': entitlements
   });
   console.log('signed');
+  if (app.indexOf('-mas-' > 0)) {
+    return;
+  }
   console.log('开始公证');
   await notarize({
     appBundleId,
