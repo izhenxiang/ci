@@ -4,7 +4,7 @@ DIR=$(dirname $(realpath "$0"))
 cd $DIR
 set -ex
 
-./import.sign.sh
+. ./import.sign.sh
 
 KEY=$(security find-identity -v|grep "3rd Party Mac Developer Installer"|awk -F\" '{print $2}')
 
