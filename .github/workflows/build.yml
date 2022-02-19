@@ -74,6 +74,7 @@ jobs:
           appleId: ${{ secrets.APPLEID }}
           teamId: ${{ secrets.TEAMID }}
           P12_PASSWORD: ${{ secrets.P12_PASSWORD }}
+          KEYCHAIN_PASSWORD: ${{ secrets.P12_PASSWORD }}
           PYTHONIOENCODING: utf8
           accessKeyId: ${{ secrets.ACCESSKEYID }}
           accessKeySecret: ${{ secrets.ACCESSKEYSECRET }}

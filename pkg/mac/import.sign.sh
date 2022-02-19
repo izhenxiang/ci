@@ -5,9 +5,9 @@ cd $DIR
 set -ex
 
 # https://localazy.com/blog/how-to-automatically-sign-pkgos-apps-using-github-actions
-security create-keychain -p $P12_PASSWORD pkg.keychain || true
+security create-keychain -p $KEYCHAIN_PASSWORD pkg.keychain || true
 security default-keychain -s pkg.keychain
-security unlock-keychain -p $P12_PASSWORD pkg.keychain
+security unlock-keychain -p $KEYCHAIN_PASSWORD pkg.keychain
 
 p12(){
   security import $DIR/$1.p12 -k pkg.keychain -P $P12_PASSWORD -T /usr/bin/codesign
@@ -18,7 +18,7 @@ p12 3rd
 p12 mas
 p12 3rd.app
 
-security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k $P12_PASSWORD pkg.keychain > /dev/null
+security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k $KEYCHAIN_PASSWORD pkg.keychain > /dev/null
 
 #curl -o wwdr_2023.cer 'https://developer.apple.com/certificationauthority/AppleWWDRCA.cer'
 security add-certificates -k pkg.keychain wwdr_2023.cer || true
