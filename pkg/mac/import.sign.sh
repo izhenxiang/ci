@@ -18,7 +18,7 @@ p12 3rd
 p12 mas
 p12 3rd.app
 
-security set-key-partition-list -S apple-tool:,apple:,codesign:,productbuild: -s -k $KEYCHAIN_PASSWORD pkg.keychain
+security set-key-partition-list -S apple-tool:,apple:,codesign:,productbuild: -s -k $KEYCHAIN_PASSWORD pkg.keychain > /dev/null
 
 #curl -o wwdr_2023.cer 'https://developer.apple.com/certificationauthority/AppleWWDRCA.cer'
 security add-certificates -k pkg.keychain wwdr_2023.cer || true
