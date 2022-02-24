@@ -33,7 +33,9 @@ export default main = =>
   _upload = (file)=>
     console.log '>', file
     url = version+"/"+file
-    txt.push "[#{file}](https://i-desk.oss-accelerate.aliyuncs.com/#{url})"
+    txt.push """
+#{file}
+https://i-desk.oss-accelerate.aliyuncs.com/#{url}"""
     OSS.upload(
       url
       join(dir,file)
@@ -46,7 +48,7 @@ export default main = =>
     li.push _upload(file)
   await Promise.all li
 
-  await push title, txt.join('\n\n')
+  await push title, txt.join('\n')
   return
 
 do =>
