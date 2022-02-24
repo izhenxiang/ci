@@ -35,7 +35,8 @@ export default main = =>
     url = version+"/"+file
     txt.push """
 #{file}
-https://i-desk.oss-accelerate.aliyuncs.com/#{url}"""
+https://i-desk.oss-accelerate.aliyuncs.com/#{url}
+"""
     OSS.upload(
       url
       join(dir,file)
