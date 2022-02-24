@@ -1,1 +1,1 @@
-var s=r=>{var t,i,a,e,f;if(!!r){for({length:i,byteOffset:t}=r,f=new DataView(r.buffer.slice(t,t+i)),a=[],e=0;e<i;)a.push(f.getUint16(e,!1)),e+=2;return a.join(".")}};export{s as b};
+import{m as d}from"./4.js";import{c as f}from"./-.js";var a,s=a=async function(o){var r,i,e,t;if(r=localStorage[o],r&&(i=await d[o](r),i)){if(t=i.getTracks(),!f[o])for(e of t)e.enabled=!1;return i}},c=a.bind(a,"audio");a.bind(a,"video");export{c as a,s as m};
