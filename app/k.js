@@ -1,1 +1,1 @@
-import{d as t,l as r,o as n}from"./s.js";import{_}from"./b.js";var o={setup:()=>{}};function a(e,s){return n(),t("button",null,[r(e.$slots,"default",{},void 0,!0)])}var u=_(o,[["render",a],["__scopeId","data-v-71ed6340"]]);export{u as b};
+import{d as t,l as r,o as n}from"./r.js";import{_}from"./b.js";var o={setup:()=>{}};function a(e,s){return n(),t("button",null,[r(e.$slots,"default",{},void 0,!0)])}var u=_(o,[["render",a],["__scopeId","data-v-71ed6340"]]);export{u as b};

@@ -1,1 +1,1 @@
-import{s}from"./s.js";var n;n=r=>(r+"").padStart(2,"0");var i=()=>{var r,e,v,l;return r=s("00"),e=s("00"),[l,v]=(()=>{var t,a;return a=0,t=void 0,[()=>{t=setInterval(()=>{++a,r.value=n(parseInt(a/60)),e.value=n(a%60)},1e3)},()=>{clearInterval(t)}]})(),[r,e,l,v]};export{i as h};
+var s=r=>{var t,i,a,e,f;if(!!r){for({length:i,byteOffset:t}=r,f=new DataView(r.buffer.slice(t,t+i)),a=[],e=0;e<i;)a.push(f.getUint16(e,!1)),e+=2;return a.join(".")}};export{s as b};
