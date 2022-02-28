@@ -20,6 +20,10 @@ cp package.json $app_package_json
 fi
 
 cd $DIR
+git add app
+git add -u
+git add ver/*.md
+git commit -m '$VER' || true
 
 git tag -d $VER | true
 git tag $VER
