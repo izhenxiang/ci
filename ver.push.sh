@@ -13,16 +13,16 @@ fi
 cd pkg/app
 
 
-VER=v`cat package.json| jq '.version' -r`
+VER=`cat package.json| jq '.version' -r`
 
 
 cd $DIR
 git add app
 git add -u
-git add ver/*.md
-git commit -m '$VER' || true
+git add ver/$VER.md
+git commit -m "v$VER" || true
 
-git tag -d $VER | true
-git tag $VER
-git push origin $VER -f
+git tag -d v$VER | true
+git tag v$VER
+git push origin v$VER -f
 git push
