@@ -13,12 +13,7 @@ cd pkg/app
 
 VER=v`cat package.json| jq '.version' -r`
 
-app_package_json=$DIR/app/package.json
-
-if [ ! -f "$app_package_json" ]; then
-echo copy
-cp package.json $app_package_json
-fi
+coffee ./pkg/package_json.coffee
 
 cd $DIR
 git add app

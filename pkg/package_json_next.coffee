@@ -37,6 +37,17 @@ write = (package_json, version)=>
 
 do =>
   package_json = JSON.parse await read fp_app_package
+  {version:version_now} = package_json
+  version = version_now.split('.').map((x)=>parseInt(x))
+
+  pos = 2
+  while pos
+    if version[pos] >= 65535
+      version[pos] = 0
+      pos -= 1
+      continue
+    version[pos] += 1
+    break
 
   code = 0
   if await write(package_json, version.join('.')) == false
