@@ -15,7 +15,8 @@ VER=v`cat package.json| jq '.version' -r`
 
 app_package_json=$DIR/app/package.json
 
-if [ ! -f "$app_package_json"]; then
+if [ ! -f "$app_package_json" ]; then
+echo copy
 cp package.json $app_package_json
 fi
 
