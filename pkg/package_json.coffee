@@ -37,10 +37,9 @@ write = (package_json, version)=>
 
 do =>
   package_json = JSON.parse await read fp_app_package
-
+  {version} = package_json
   code = 0
-  if await write(package_json, version.join('.')) == false
+  if await write(package_json, version) == false
     code = 1
-    await write(package_json, version_now)
   process.exit code
 

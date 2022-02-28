@@ -8,12 +8,13 @@ if [ ! -f "./pkg/ico/app.icns" ]; then
 ./pkg/ico.xsh
 fi
 
+./.direnv/bin/coffee ./pkg/package_json.coffee
+
 cd pkg/app
 
 
 VER=v`cat package.json| jq '.version' -r`
 
-coffee ./pkg/package_json.coffee
 
 cd $DIR
 git add app
