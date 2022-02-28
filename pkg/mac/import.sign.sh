@@ -30,4 +30,4 @@ security add-certificates -k pkg.keychain wwdr_2030.cer || true
 security set-keychain-settings pkg.keychain
 
 # 看看是否导入成功
-security find-identity -v
+#security find-identity -v
