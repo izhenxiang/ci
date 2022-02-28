@@ -8,7 +8,7 @@ class Oss
   constructor:(bucket)->
     @_ = new OSS({
       endpoint: 'oss-cn-beijing.aliyuncs.com'
-      region: 'oss-cn-zhangjiakou'
+      region: 'oss-cn-beijing'
       bucket
       accessKeyId
       accessKeySecret
