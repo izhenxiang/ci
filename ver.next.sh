@@ -10,4 +10,3 @@ git add app
 git add -u
 git add ver/*.md
 git commit -m '⭕️' || true
-

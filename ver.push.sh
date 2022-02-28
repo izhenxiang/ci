@@ -10,11 +10,11 @@ fi
 
 cd pkg/app
 
-
 VER=v`cat package.json| jq '.version' -r`
 
 cd $DIR
 
+git tag -d $VER | true
 git tag $VER
-git push origin $VER
+git push origin $VER -f
 git push
