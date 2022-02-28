@@ -1,5 +1,6 @@
 #!/usr/bin/env coffee
 
+import {OSS_DESK, OSS_DESK_HOST} from './config.coffee'
 import DIR from './dir'
 import {join} from 'path'
 import Oss from './oss.coffee'
@@ -8,7 +9,7 @@ import {readFile} from 'fs/promises'
 import push from './push'
 import os from 'os'
 
-OSS = Oss 'i-desk'
+OSS = Oss OSS_DESK
 
 {version, productName, description} = JSON.parse await readFile(
   join DIR,'app/package.json'
@@ -35,7 +36,7 @@ export default main = =>
     url = version+"/"+file
     txt.push """
 #{file}
-https://i-desk.oss-accelerate.aliyuncs.com/#{url}
+https://#{OSS_DESK_HOST}/#{url}
 """
     OSS.upload(
       url

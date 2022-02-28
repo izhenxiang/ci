@@ -1,5 +1,6 @@
 #!/usr/bin/env coffee
 
+import {OSS_VER} from './config.coffee'
 import { pack } from 'msgpackr'
 import {brotliCompress as _brotliCompress} from 'zlib'
 import { promisify } from 'util'
@@ -15,7 +16,7 @@ import asar from 'asar'
 import {createHash} from 'crypto'
 
 DIR = dirname thisdir import.meta
-OSS = Oss 'i-ver'
+OSS = Oss OSS_VER
 HASH = 'sha512'
 
 hash_bin = (bin)=>

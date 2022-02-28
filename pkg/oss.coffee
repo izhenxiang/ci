@@ -9,7 +9,7 @@ class Oss
     @_ = new OSS({
       endpoint: 'oss-cn-beijing.aliyuncs.com'
       region: 'oss-cn-zhangjiakou'
-      bucket # 'i-desk'
+      bucket
       accessKeyId
       accessKeySecret
       #timeout:5000
