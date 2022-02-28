@@ -7,4 +7,3 @@ set -ex
 ./.direnv/bin/coffee ./pkg/package_json.coffee
 
 
-./ver.push.sh
