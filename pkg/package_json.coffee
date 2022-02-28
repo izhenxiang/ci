@@ -11,27 +11,6 @@ read = (fp)=>
 pkg_json = 'package.json'
 fp_app_package = join DIR,'pkg/app/'+pkg_json
 
-do =>
-
-  package_json = JSON.parse await read fp_app_package
-  {version:version_now} = package_json
-  version = version_now.split('.').map((x)=>parseInt(x))
-
-  pos = 2
-  while pos
-    if version[pos] >= 65535
-      version[pos] = 0
-      pos -= 1
-      continue
-    version[pos] += 1
-    break
-
-  code = 0
-  if await write(package_json, version.join('.')) == false
-    code = 1
-    await write(package_json, version_now)
-  process.exit code
-
 
 
 write = (package_json, version)=>
@@ -56,4 +35,23 @@ write = (package_json, version)=>
   return true
 
 
+do =>
+  package_json = JSON.parse await read fp_app_package
+  {version:version_now} = package_json
+  version = version_now.split('.').map((x)=>parseInt(x))
+
+  pos = 2
+  while pos
+    if version[pos] >= 65535
+      version[pos] = 0
+      pos -= 1
+      continue
+    version[pos] += 1
+    break
+
+  code = 0
+  if await write(package_json, version.join('.')) == false
+    code = 1
+    await write(package_json, version_now)
+  process.exit code
 

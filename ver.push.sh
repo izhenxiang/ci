@@ -10,7 +10,14 @@ fi
 
 cd pkg/app
 
+
 VER=v`cat package.json| jq '.version' -r`
+
+app_package_json=$DIR/app/package.json
+
+if [ ! -f "$app_package_json"]; then
+cp package.json $app_package_json
+fi
 
 cd $DIR
 
