@@ -12,7 +12,6 @@ pkg_json = 'package.json'
 fp_app_package = join DIR,'pkg/app/'+pkg_json
 
 
-
 write = (package_json, version)=>
   package_json.version = version
   fp = join(DIR,'ver', version+'.md')
@@ -42,7 +41,7 @@ do =>
 
   pos = 2
   while pos
-    if version[pos] >= 65535
+    if version[pos] > 65535
       version[pos] = 0
       pos -= 1
       continue

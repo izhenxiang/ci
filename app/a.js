@@ -1,1 +1,1 @@
-import{k as t,B as r,o as n}from"./q.js";import{_}from"./i.js";var o={setup:()=>{}};function a(e,s){return n(),t("button",null,[r(e.$slots,"default",{},void 0,!0)])}var c=_(o,[["render",a],["__scopeId","data-v-71ed6340"]]);export{c as b};
+import{s}from"./o.js";var n;n=r=>(r+"").padStart(2,"0");var i=()=>{var r,e,v,l;return r=s("00"),e=s("00"),[l,v]=(()=>{var t,a;return a=0,t=void 0,[()=>{t=setInterval(()=>{++a,r.value=n(parseInt(a/60)),e.value=n(a%60)},1e3)},()=>{clearInterval(t)}]})(),[r,e,l,v]};export{i as h};
