@@ -1,1 +1,1 @@
-import{s as r}from"./i.js";var s=r.draw({shape:"pen"});export{s as D};
+import{i as s}from"./5.js";import{c as t}from"./8.js";var o,i;({rec:i}=s);o="src,audio,video,area".split(",");var f=()=>{var a;i(...function(){var r;r=[];for(a of o)r.push(t[a]);return r}())};export{f as s};
