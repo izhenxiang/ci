@@ -25,7 +25,7 @@ class Oss
         await @_.head(url)
       catch err
         if err.status != 404
-          throw err
+          continue
         loop
           try
             return await @_.put(url,bin)
