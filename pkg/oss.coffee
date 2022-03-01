@@ -25,6 +25,7 @@ class Oss
         await @_.head(url)
       catch err
         if err.status != 404
+          console.error err
           continue
         loop
           try
