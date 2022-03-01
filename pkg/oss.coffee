@@ -12,7 +12,7 @@ class Oss
       bucket
       accessKeyId
       accessKeySecret
-      timeout:9000
+      timeout:19000
       #retryMax: 9
     })
 
