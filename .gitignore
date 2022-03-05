@@ -1,0 +1,7 @@
+__pycache__/
+.DS_Store
+/release/
+/tmp/
+node_modules
+yarn.lock
+app/trayTemplate*.png
