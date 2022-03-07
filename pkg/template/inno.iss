@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "${productName}"
-#define MyAppVersion "0.0.1"
+#define MyAppVersion "${version}"
 #define MyAppExeName "${productName}.exe"
 #define MyAppURL "https://izhenxiang.com"
 
@@ -71,4 +71,3 @@ Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\{#MyAppName}"; Fil
 
 [Run]
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
-
