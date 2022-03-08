@@ -35,8 +35,9 @@ export default main = =>
     console.log '>', file
     url = version+"/"+file
     txt.push """
-#{file}
+→ #{file}
 https://#{OSS_DESK_HOST}/#{url}
+
 """
     OSS.upload(
       url
@@ -56,4 +57,3 @@ https://#{OSS_DESK_HOST}/#{url}
 do =>
   await main()
   process.exit()
-
