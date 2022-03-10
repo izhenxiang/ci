@@ -1,1 +1,1 @@
-import{k as t,B as r,o as n}from"./e.js";import{_}from"./_.js";var o={setup:()=>{}};function a(e,s){return n(),t("button",null,[r(e.$slots,"default",{},void 0,!0)])}var c=_(o,[["render",a],["__scopeId","data-v-71ed6340"]]);export{c as b};
+import{h as r,c as e}from"./3.js";var i=new Proxy(()=>{},{get:(s,o)=>(...t)=>{var f;for(f of r)typeof f[o]=="function"&&f[o](...t);t.unshift(o),e.postMessage(t)}});export{i as b};
