@@ -1,1 +1,1 @@
-import{s as r}from"./d.js";var o=r.record({src:"all",area:0});export{o as c};
+var t=new Proxy({},{get:(i,r)=>a=>{var e;return e={},e[r]={deviceId:{exact:a}},navigator.mediaDevices.getUserMedia(e)}});export{t as m};
