@@ -1,1 +1,1 @@
-"use strict";exports[Symbol.toStringTag]="Module";var r=require("electron"),a=require("path"),e="izhenxiang",t=process.env[e+"_root"]||a.join(r.app.getPath("userData"),e);exports.ROOT=t;
+import{d as t,e as r,o as n}from"./x.js";import{_}from"./8.js";var o={setup:()=>{}};function a(e,s){return n(),t("button",null,[r(e.$slots,"default",{},void 0,!0)])}var c=_(o,[["render",a],["__scopeId","data-v-71ed6340"]]);export{c as b};
