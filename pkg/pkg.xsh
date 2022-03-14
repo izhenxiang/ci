@@ -151,7 +151,9 @@ def win():
 
   cd @(RELEASE)
   shutil.rmtree(NAME, ignore_errors=True)
-  Path(NAME+f"-win32-{arch}").rename(NAME)
+
+  app_path = NAME+f"-win32-{arch}"
+  Path(app_path).rename(NAME)
 
   for i in (
     join(NAME, "LICENSE"),
@@ -179,6 +181,8 @@ def win():
 
   with py7zr.SevenZipFile(f"{out}7z", 'w') as z:
     z.writeall('./'+NAME)
+
+  Path(NAME).rename(app_path)
 
 def _platform():
   platform = sys.platform
