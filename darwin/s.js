@@ -1,1 +1,1 @@
-import{i as t}from"./..js";var o;({recbar:o}=t);var c=async()=>{var e,r,a;a={audio:{mandatory:{chromeMediaSource:"desktop"}},video:{mandatory:{chromeMediaSourceId:await o.screen_source(),chromeMediaSource:"desktop"}}},e=()=>navigator.mediaDevices.getUserMedia(a);try{r=await e()}catch{delete a.audio,r=await e()}return r};export{c as v};
+import{d as e,o as _}from"./z.js";import{_ as o}from"./8.js";var r={components:{},setup:()=>{}};const t={class:"x"};function a(c,s){return _(),e("a",t)}var d=o(r,[["render",a],["__scopeId","data-v-49b010e9"]]);export{d as x};
