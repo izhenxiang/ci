@@ -10,10 +10,7 @@ if [ ! -f "./pkg/ico/app.icns" ]; then
 ./pkg/ico.xsh
 fi
 
-./.direnv/bin/coffee ./pkg/package_json.coffee
-
 cd pkg/app
-
 
 VER=`cat package.json| jq '.version' -r`
 
