@@ -12,7 +12,6 @@ fi
 cd $DIR
 }
 
-init app
 init pkg
 init .
 

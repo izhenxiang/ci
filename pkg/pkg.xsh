@@ -33,7 +33,7 @@ def write(fp,txt):
     o.write(txt)
 
 
-APP = join(ROOT,"app")
+APP = join(ROOT,$(node -e "console.log(require('os').platform())"))
 PKG = join(ROOT,"pkg")
 TEMPLATE = join(PKG,"template")
 RELEASE = join(ROOT,"release")
@@ -187,14 +187,7 @@ def _platform():
   elif platform.startswith("win"):
     platform = platform[:3]
 
-  if platform == 'darwin':
-    tray = 'black'
-  else:
-    tray = 'color'
-
-  cp @(PKG)/tray/@(tray)/*.png @(APP)
 
   return platform
 
 locals()[_platform()]()
-

@@ -17,7 +17,6 @@ VER=`cat package.json| jq '.version' -r`
 
 
 cd $DIR
-git add app
 git add -u
 git add ver/$VER.md
 git commit -m "v$VER" || true
