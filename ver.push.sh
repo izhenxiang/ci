@@ -4,6 +4,8 @@ DIR=$(dirname $(realpath "$0"))
 cd $DIR
 set -ex
 
+gsync
+
 if [ ! -f "./pkg/ico/app.icns" ]; then
 ./pkg/ico.xsh
 fi
@@ -14,7 +16,6 @@ cd pkg/app
 
 
 VER=`cat package.json| jq '.version' -r`
-
 
 cd $DIR
 git add -u

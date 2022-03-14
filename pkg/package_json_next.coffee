@@ -25,12 +25,6 @@ write = (package_json, version)=>
   )
   package_json.description = await read fp
 
-  await writeFile(
-    join(
-      DIR,'app',pkg_json
-    )
-    JSON.stringify package_json
-  )
   return true
 
 
@@ -53,4 +47,3 @@ do =>
     code = 1
     await write(package_json, version_now)
   process.exit code
-
