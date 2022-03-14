@@ -20,11 +20,11 @@ write = (package_json, version)=>
     console.error fp,'not exist'
     return false
 
+  package_json.description = await read fp
   await writeFile(
     fp_app_package
     JSON.stringify package_json
   )
-  package_json.description = await read fp
 
   return true
 
