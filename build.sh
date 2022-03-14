@@ -4,6 +4,8 @@ DIR=$(dirname $(realpath "$0"))
 cd $DIR
 set -ex
 
+PLATFORM=$(node -e "console.log(require('os').platform())")
+
 init(){
 cd $1
 if [ ! -d "node_modules" ]; then
@@ -12,7 +14,7 @@ fi
 cd $DIR
 }
 
-init app
+init $PLATFORM
 init pkg
 init .
 

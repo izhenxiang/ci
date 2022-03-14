@@ -7,7 +7,7 @@ import { promisify } from 'util'
 brotliCompress = promisify _brotliCompress
 import Oss from './oss'
 import {encode} from 'urlsafe-base64'
-import {tmpdir} from 'os'
+import {tmpdir,platform} from 'os'
 import thisdir from '@rmw/thisdir'
 import {rm,readFile,readdir} from 'fs/promises'
 import {createReadStream} from 'fs'
@@ -103,12 +103,21 @@ ver_bin = (version)=>
 
 
 export default main = =>
+  _platform = platform()
+
   {productName, version} = JSON.parse await readFile(
     join DIR,'app/package.json'
     'utf8'
   )
   console.log version
-  app = join DIR,"release/#{productName}-darwin-x64/#{productName}.app/Contents/Resources/app.asar"
+
+  switch _platform
+    when 'darwin'
+      asar_path = '.app/Contents/Resources'
+    when 'win32'
+      asar_path = '/resources'
+
+  app = join DIR,"release/#{productName}-#{_platform}-x64/#{productName}#{asar_path}/app.asar"
 
   outdir = join tmpdir(), await hash(app)
 
@@ -117,13 +126,14 @@ export default main = =>
   finally
     await rm(outdir,recursive: true, force: true)
 
+  _platform += '/'
   v = ver_bin version
   await OSS._.put(
-    encode v
+    _platform+encode(v)
     ver
   )
   await OSS._.put(
-    "v"
+    _platform+"v"
     v
   )
   return
@@ -131,4 +141,3 @@ export default main = =>
 do =>
   await main()
   process.exit()
-

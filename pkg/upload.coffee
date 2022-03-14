@@ -12,7 +12,7 @@ import os from 'os'
 OSS = Oss OSS_DESK
 
 {version, productName, description} = JSON.parse await readFile(
-  join DIR,'app/package.json'
+  join DIR,'pkg/app/package.json'
   'utf8'
 )
 

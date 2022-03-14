@@ -33,15 +33,15 @@ def write(fp,txt):
     o.write(txt)
 
 
-APP = join(ROOT,"app")
+APP = join(ROOT,$(node -e "console.log(require('os').platform())").strip('\n'))
 PKG = join(ROOT,"pkg")
 TEMPLATE = join(PKG,"template")
 RELEASE = join(ROOT,"release")
 
-app_package_json = "app/package.json"
+app_package_json = "package.json"
 
-PKG_JSON = join(PKG,app_package_json)
-APP_JSON = join(ROOT,app_package_json)
+PKG_JSON = join(PKG,'app',app_package_json)
+APP_JSON = join(APP,app_package_json)
 
 if not exists(APP_JSON):
   cp @(PKG_JSON) @(APP_JSON)
@@ -187,14 +187,7 @@ def _platform():
   elif platform.startswith("win"):
     platform = platform[:3]
 
-  if platform == 'darwin':
-    tray = 'black'
-  else:
-    tray = 'color'
-
-  cp @(PKG)/tray/@(tray)/*.png @(APP)
 
   return platform
 
 locals()[_platform()]()
-

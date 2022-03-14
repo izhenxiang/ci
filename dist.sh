@@ -6,6 +6,4 @@ set -ex
 
 ./build.sh
 
-if [ "$(uname)" == "Darwin" ]; then
 .direnv/bin/coffee ./pkg/auto_update.coffee
-fi

@@ -5,4 +5,3 @@ cd $DIR
 set -ex
 
 AUTO_UPDATE=1 ./build.sh
-
