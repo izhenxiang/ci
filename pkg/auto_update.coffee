@@ -113,11 +113,11 @@ export default main = =>
 
   switch _platform
     when 'darwin'
-      asar_path = '.app/Contents/Resources'
+      asar_path = productName+'.app/Contents/Resources'
     when 'win32'
-      asar_path = '/resources'
+      asar_path = 'resources'
 
-  app = join DIR,"release/#{productName}-#{_platform}-x64/#{productName}#{asar_path}/app.asar"
+  app = join DIR,"release/#{productName}-#{_platform}-x64/#{asar_path}/app.asar"
 
   outdir = join tmpdir(), await hash(app)
 
