@@ -1,1 +1,1 @@
-import{h as r,c as e}from"./1.js";var i=new Proxy(()=>{},{get:(s,o)=>(...t)=>{var f;for(f of r)typeof f[o]=="function"&&f[o](...t);t.unshift(o),e.postMessage(t)}});export{i as b};
+import{d as e,o as _}from"./s.js";import{_ as o}from"./d.js";var r={components:{},setup:()=>{}};const t={class:"x"};function a(c,s){return _(),e("a",t)}var d=o(r,[["render",a],["__scopeId","data-v-49b010e9"]]);export{d as x};
