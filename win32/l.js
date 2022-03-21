@@ -1,1 +1,1 @@
-(function(){"use strict";self.onmessage=({data:[t,o,c,d,e,a]})=>{var n,s;n=new OffscreenCanvas(e,a),s=n.getContext("2d",{alpha:!1,desynshronized:!0}),t.pipeThrough(new TransformStream({transform:(r,f)=>{s.drawImage(r,c,d,e,a,0,0,e,a),f.enqueue(new VideoFrame(n)),r.close()}})).pipeTo(o)}})();
+import{d as t,e as r,o as n}from"./o.js";import{_}from"./b.js";var o={setup:()=>{}};function a(e,s){return n(),t("button",null,[r(e.$slots,"default",{},void 0,!0)])}var c=_(o,[["render",a],["__scopeId","data-v-71ed6340"]]);export{c as b};

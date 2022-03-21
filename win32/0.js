@@ -1,1 +1,1 @@
-import{d as e,o as _}from"./k.js";import{_ as o}from"./9.js";var r={components:{},setup:()=>{}};const t={class:"x"};function a(c,s){return _(),e("a",t)}var d=o(r,[["render",a],["__scopeId","data-v-49b010e9"]]);export{d as x};
+var s=new BroadcastChannel("rec"),v=[],c=(r=!1)=>{var a;return a={},s.addEventListener("message",async({data:n})=>{var e;e=n[0],await(typeof a[e]=="function"?a[e](...n.slice(1)):void 0)}),r&&v.push(a),a},o=c();export{c as N,o as O,s as c,v as h};
