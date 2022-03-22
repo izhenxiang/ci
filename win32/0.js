@@ -1,1 +1,1 @@
-var s=new BroadcastChannel("rec"),v=[],c=(r=!1)=>{var a;return a={},s.addEventListener("message",async({data:n})=>{var e;e=n[0],await(typeof a[e]=="function"?a[e](...n.slice(1)):void 0)}),r&&v.push(a),a},o=c();export{c as N,o as O,s as c,v as h};
+import{m as d,c as f}from"./$.js";var a,s=a=async function(e){var o,i,r,t;if(o=localStorage[e],o&&(i=await d[e](o),i)){if(t=i.getTracks(),!f[e])for(r of t)r.enabled=!1;return i}},c=a.bind(a,"audio");a.bind(a,"video");export{c as a,s as m};

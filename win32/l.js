@@ -1,1 +1,1 @@
-import{d as t,e as r,o as n}from"./o.js";import{_}from"./b.js";var o={setup:()=>{}};function a(e,s){return n(),t("button",null,[r(e.$slots,"default",{},void 0,!0)])}var c=_(o,[["render",a],["__scopeId","data-v-71ed6340"]]);export{c as b};
+import{s as r}from"./o.js";var s=r.draw({shape:"pen"});export{s as D};

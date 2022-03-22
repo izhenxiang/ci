@@ -1,1 +1,1 @@
-"use strict";var e=require("electron");(async()=>(await Promise.all([e.app.whenReady()]),await Promise.resolve().then(function(){return require("./4.js")})))();
+(function(){"use strict";self.onmessage=({data:[s,u,c,d,m,r,t]})=>{var e,o,a,n;a=r*s,n=t*s,e=new OffscreenCanvas(a,n),o=e.getContext("2d",{alpha:!1,desynshronized:!0}),u.pipeThrough(new TransformStream({transform:(f,p)=>{o.drawImage(f,d,m,r,t,0,0,a,n),p.enqueue(new VideoFrame(e)),f.close()}})).pipeTo(c)}})();
