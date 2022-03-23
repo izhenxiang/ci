@@ -1,1 +1,1 @@
-import{i as s}from"./2.js";import{c as t}from"./4.js";var o,i;({rec:i}=s);o="src,audio,video,area".split(",");var f=()=>{var a;i(...function(){var r;r=[];for(a of o)r.push(t[a]);return r}())};export{f as s};
+import{m as d,c as f}from"./_.js";var a,s=a=async function(e){var o,i,r,t;if(o=localStorage[e],o&&(i=await d[e](o),i)){if(t=i.getTracks(),!f[e])for(r of t)r.enabled=!1;return i}},c=a.bind(a,"audio");a.bind(a,"video");export{c as a,s as m};

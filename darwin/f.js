@@ -1,1 +1,1 @@
-"use strict";var e=require("electron");(async()=>(await Promise.all([e.app.whenReady()]),await Promise.resolve().then(function(){return require("./-.js")})))();
+import"./7.js";var a=r=>{};export{a as d};
