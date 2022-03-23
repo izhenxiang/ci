@@ -1,1 +1,1 @@
-(function(){"use strict";self.onmessage=({data:[e,p,g,o,f,n,s]})=>{var a,u,r,t;n*=e,s*=e,t=s*2,r=n*2,o*=e,f*=e,a=new OffscreenCanvas(r,t),u=a.getContext("2d",{alpha:!1,desynshronized:!0}),p.pipeThrough(new TransformStream({transform:(m,h)=>{u.drawImage(m,o,f,n,s,0,0,r,t),h.enqueue(new VideoFrame(a)),m.close()}})).pipeTo(g)}})();
+import{d as e,o as _}from"./r.js";import{_ as o}from"./b.js";var r={components:{},setup:()=>{}};const t={class:"x"};function a(c,s){return _(),e("a",t)}var d=o(r,[["render",a],["__scopeId","data-v-49b010e9"]]);export{d as x};

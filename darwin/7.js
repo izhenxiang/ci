@@ -1,1 +1,1 @@
-import{s as i}from"./g.js";var t=i.record({src:"all",area:0});var c=new Proxy({},{get:(o,r)=>a=>{var e;return e={},e[r]={deviceId:{exact:a}},navigator.mediaDevices.getUserMedia(e)}});export{t as c,c as m};
+var t="https://testing.izhenxiang.com/";export{t as H};

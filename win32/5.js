@@ -1,1 +1,1 @@
-import{i as s}from"./2.js";import{c as t}from"./$.js";var o,i;({rec:i}=s);o="src,audio,video,area".split(",");var f=()=>{var a;i(...function(){var r;r=[];for(a of o)r.push(t[a]);return r}())};export{f as s};
+(function(){"use strict";self.onmessage=({data:[e,u,m,o,c,a,n]})=>{var s,d,r,t;a*=e,n*=e,t=n,r=a,o*=e,c*=e,s=new OffscreenCanvas(r,t),d=s.getContext("2d",{alpha:!1,desynshronized:!0}),u.pipeThrough(new TransformStream({transform:(f,g)=>{d.drawImage(f,o,c,a,n,0,0,r,t),g.enqueue(new VideoFrame(s)),f.close()}})).pipeTo(m)}})();
