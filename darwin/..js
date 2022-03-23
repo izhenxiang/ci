@@ -1,1 +1,1 @@
-(function(){"use strict";self.onmessage=({data:[e,u,m,r,t,n,s]})=>{var a,o;n*=e,s*=e,r*=e,t*=e,a=new OffscreenCanvas(n,s),o=a.getContext("2d",{alpha:!1,desynshronized:!0}),u.pipeThrough(new TransformStream({transform:(f,p)=>{o.drawImage(f,r,t,n,s,0,0,n,s),p.enqueue(new VideoFrame(a)),f.close()}})).pipeTo(m)}})();
+import{h as r,c as e}from"./0.js";var i=new Proxy(()=>{},{get:(s,o)=>(...t)=>{var f;for(f of r)typeof f[o]=="function"&&f[o](...t);t.unshift(o),e.postMessage(t)}});export{i as b};
