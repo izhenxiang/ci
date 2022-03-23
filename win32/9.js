@@ -1,1 +1,1 @@
-var t="https://testing.izhenxiang.com/";export{t as H};
+(function(){"use strict";self.onmessage=({data:[e,d,g,o,f,a,r]})=>{var n,u,s,t;a*=e,r*=e,t=r,s=a,o*=e,f*=e,n=new OffscreenCanvas(s,t),u=n.getContext("2d",{alpha:!1,desynshronized:!0,preserveDrawingBuffer:!0}),d.pipeThrough(new TransformStream({transform:(c,m)=>{u.drawImage(c,o,f,a,r,0,0,s,t),m.enqueue(new VideoFrame(n)),c.close()}})).pipeTo(g)}})();
