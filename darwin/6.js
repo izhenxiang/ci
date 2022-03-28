@@ -1,1 +1,1 @@
-var t="https://testing.izhenxiang.com/";export{t as H};
+import"./0.js";var a=r=>{};export{a as d};

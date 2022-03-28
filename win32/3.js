@@ -1,1 +1,1 @@
-import{d as e,o as _}from"./l.js";import{_ as o}from"./c.js";var r={components:{},setup:()=>{}};const t={class:"x"};function a(c,s){return _(),e("a",t)}var d=o(r,[["render",a],["__scopeId","data-v-49b010e9"]]);export{d as x};
+var i=n=>{var r;return r=e=>new Proxy(()=>{},{apply:(a,t,p)=>n(e.join("."),p),get:(a,t)=>r([...e,t])}),r([])},o=i(E.invoke);export{o as i};
