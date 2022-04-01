@@ -1,1 +1,1 @@
-"use strict";var e=require("electron");(async()=>(await Promise.all([e.app.whenReady()]),await Promise.resolve().then(function(){return require("./7.js")})))();
+import{s as r}from"./c.js";var s=r.draw({shape:"pen"});export{s as D};
