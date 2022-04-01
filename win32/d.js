@@ -1,1 +1,1 @@
-import{d as e,o as _}from"./r.js";import{_ as o}from"./b.js";var r={components:{},setup:()=>{}};const t={class:"x"};function a(c,s){return _(),e("a",t)}var d=o(r,[["render",a],["__scopeId","data-v-49b010e9"]]);export{d as x};
+import{d as e,o as _}from"./q.js";import{_ as o}from"./b.js";var r={components:{},setup:()=>{}};const t={class:"x"};function a(c,s){return _(),e("a",t)}var d=o(r,[["render",a],["__scopeId","data-v-49b010e9"]]);export{d as x};
