@@ -1,1 +1,1 @@
-var t="https://testing.izhenxiang.com/";export{t as H};
+import{d as e,o as _}from"./w.js";import{_ as o}from"./c.js";var r={components:{},setup:()=>{}};const t={class:"x"};function a(c,s){return _(),e("a",t)}var d=o(r,[["render",a],["__scopeId","data-v-49b010e9"]]);export{d as x};
