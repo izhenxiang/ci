@@ -1,1 +1,1 @@
-"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});var r=require("electron"),t=require("path"),e="izhenxiang",a=process.env[e+"_root"]||t.join(r.app.getPath("userData"),e);exports.ROOT=a;
+import{d as e,o as _}from"./y.js";import{_ as o}from"./a.js";var r={components:{},setup:()=>{}};const t={class:"x"};function a(c,s){return _(),e("a",t)}var d=o(r,[["render",a],["__scopeId","data-v-49b010e9"]]);export{d as x};

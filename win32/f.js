@@ -1,1 +1,1 @@
-import{d as e,o as _}from"./q.js";import{_ as o}from"./c.js";var r={components:{},setup:()=>{}};const t={class:"x"};function a(c,s){return _(),e("a",t)}var d=o(r,[["render",a],["__scopeId","data-v-49b010e9"]]);export{d as x};
+import{d as t,e as r,o as n}from"./r.js";import{_}from"./b.js";var o={setup:()=>{}};function a(e,s){return n(),t("button",null,[r(e.$slots,"default",{},void 0,!0)])}var c=_(o,[["render",a],["__scopeId","data-v-71ed6340"]]);export{c as b};
