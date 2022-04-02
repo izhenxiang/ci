@@ -1,1 +1,1 @@
-"use strict";var e=require("electron");(async()=>(await Promise.all([e.app.whenReady()]),await Promise.resolve().then(function(){return require("./j.js")})))();
+import{c as t,r,a as n,_}from"./d.js";var a={setup:()=>{}};function o(e,s){return n(),t("button",null,[r(e.$slots,"default",{},void 0,!0)])}var d=_(a,[["render",o],["__scopeId","data-v-71ed6340"]]);export{d as b};
