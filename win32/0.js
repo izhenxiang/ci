@@ -1,1 +1,1 @@
-var i=n=>{var r;return r=e=>new Proxy(()=>{},{apply:(a,t,p)=>n(e.join("."),p),get:(a,t)=>r([...e,t])}),r([])},o=i(E.invoke);export{o as i};
+import{c as e,a as _,_ as t}from"./c.js";var a={components:{},setup:()=>{}};const c={class:"x"};function r(o,s){return _(),e("a",c)}var p=t(a,[["render",r],["__scopeId","data-v-49b010e9"]]);export{p as x};
