@@ -1,1 +1,1 @@
-var a="https://izhenxiang.com/";export{a as H};
+import{s as r}from"./g.js";var s=r.draw({shape:"pen"});export{s as D};
