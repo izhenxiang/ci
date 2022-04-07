@@ -1,1 +1,1 @@
-{"main":"m.js","productName":"帧享","version":"0.0.177","devDependencies":{"electron":"=18.0.1"},"hardenedRuntime":true,"extendInfo":{"NSMicrophoneUsageDescription":"请授权麦克风","NSCameraUsageDescription":"请授权摄像头"},"license":"UNLICENSED","description":"* 测试发版\n"}
+{"main":"m.js","productName":"帧享","version":"0.0.178","devDependencies":{"electron":"=18.0.1"},"hardenedRuntime":true,"extendInfo":{"NSMicrophoneUsageDescription":"请授权麦克风","NSCameraUsageDescription":"请授权摄像头"},"license":"UNLICENSED","description":"* 测试发版\n"}
