@@ -1,6 +1,6 @@
-利用github action自动构建
+使用github action自动构建
 
-之所以用github action是因为他机器型号比较全而且不要钱
+github action的机器型号比较全，而且对于开源repo来说免费
 
 国内配置 `.yarnrc` 如下
 
@@ -9,7 +9,6 @@ registry "https://registry.npm.taobao.org"
 disturl "https://npm.taobao.org/dist"
 electron_mirror "https://npm.taobao.org/mirrors/electron/"
 ```
-
 
 ## 调试
 
