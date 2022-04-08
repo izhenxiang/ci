@@ -2,7 +2,7 @@
 
 机器型号比较全，而且对于开源repo免费
 
-可以在 https://github.com/izhenxiang/ci/actions 看到构建进度，也可以手动 run workflow
+可以在 https://github.com/izhenxiang/ci/actions 看构建进度，也可以手动 run workflow
 
 ## 调试
 
