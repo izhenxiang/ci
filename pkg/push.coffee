@@ -15,17 +15,5 @@ export default main = (title, txt)=>
           text:title+"\n"+txt
       }
     )
-    ###
-    axios.post(
-      "https://pushplus.hxtrip.com/send"
-      {
-        token:process.env.PUSHPLUS_TOKEN
-        title
-        topic: 'izhenxiang-desk'
-        content:title + "\n" + md.render txt
-        template:'html'
-      }
-    )
-    ###
   ]
 
