@@ -1,20 +1,14 @@
-使用github action自动构建
+## 使用github action自动构建
 
-github action的机器型号比较全，而且对于开源repo来说免费
+机器型号比较全，而且对于开源repo免费
 
-国内配置 `.yarnrc` 如下
-
-```
-registry "https://registry.npm.taobao.org"
-disturl "https://npm.taobao.org/dist"
-electron_mirror "https://npm.taobao.org/mirrors/electron/"
-```
+可以在 https://github.com/izhenxiang/ci/actions 看到构建进度，也可以手动 run workflow
 
 ## 调试
 
 ./debug.sh
 
-## 如何签名
+## 签名
 
 https://github.com/electron/electron-osx-sign/issues/77
 
