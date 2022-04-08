@@ -1,1 +1,1 @@
-import{i as s}from"./2.js";import{c as t}from"./6.js";var o,i;({rec:i}=s);o="src,audio,video,area".split(",");var f=()=>{var a;i(...function(){var r;r=[];for(a of o)r.push(t[a]);return r}())};export{f as s};
+var t=(s,e)=>{var r,n;for(r in e)n=e[r],s.addEventListener(r,n);return()=>{var v;v=[];for(r in e)n=e[r],v.push(s.removeEventListener(r,n));return v}};export{t as $};

@@ -1,1 +1,1 @@
-import{s as i}from"./u.js";var t=i.record({src:"all",area:0});var c=new Proxy({},{get:(o,r)=>a=>{var e;return e={},e[r]={deviceId:{exact:a}},navigator.mediaDevices.getUserMedia(e)}});export{t as c,c as m};
+import{c as e,a as _,_ as t}from"./9.js";var a={components:{},setup:()=>{}};const c={class:"x"};function r(o,s){return _(),e("a",c)}var p=t(a,[["render",r],["__scopeId","data-v-49b010e9"]]);export{p as x};
