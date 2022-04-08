@@ -1,1 +1,1 @@
-"use strict";require("path");require("fs");require("./..js");
+"use strict";require("path");require("fs");require("./i.js");
