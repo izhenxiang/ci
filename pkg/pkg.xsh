@@ -123,7 +123,7 @@ def _darwin(platform, arch):
     tmp = join(tmpdir, f"{app_name}")
 
     npx --yes appdmg @(fp) @(tmp)
-    hdiutil convert @(tmp) -format ULMO -o @(app)
+    hdiutil convert @(tmp) -format UDZO -o @(app)
     rm -rf @(tmpdir)
 
 
