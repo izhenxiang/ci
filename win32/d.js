@@ -1,1 +1,1 @@
-var t=(s,e)=>{var r,n;for(r in e)n=e[r],s.addEventListener(r,n);return()=>{var v;v=[];for(r in e)n=e[r],v.push(s.removeEventListener(r,n));return v}};export{t as $};
+import{s as i}from"./1.js";var t=i.record({src:"all",area:0});var c=new Proxy({},{get:(o,r)=>a=>{var e;return e={},e[r]={deviceId:{exact:a}},navigator.mediaDevices.getUserMedia(e)}});export{t as c,c as m};

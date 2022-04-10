@@ -1,1 +1,1 @@
-import{c as e,a as _,_ as t}from"./c.js";var a={components:{},setup:()=>{}};const c={class:"x"};function r(o,s){return _(),e("a",c)}var p=t(a,[["render",r],["__scopeId","data-v-49b010e9"]]);export{p as x};
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});var r=require("electron"),t=require("path"),e="izhenxiang",a=process.env[e+"_root"]||t.join(r.app.getPath("userData"),e);exports.ROOT=a;
