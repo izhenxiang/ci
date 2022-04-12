@@ -1,1 +1,1 @@
-import{c as t,r,a as n,_}from"./f.js";var a={setup:()=>{}};function o(e,s){return n(),t("button",null,[r(e.$slots,"default",{},void 0,!0)])}var d=_(a,[["render",o],["__scopeId","data-v-71ed6340"]]);export{d as b};
+import{m as d,c as f}from"./a.js";var a,s=a=async function(e){var o,i,r,t;if(o=localStorage[e],o&&(i=await d[e](o),i)){if(t=i.getTracks(),!f[e])for(r of t)r.enabled=!1;return i}},c=a.bind(a,"audio");a.bind(a,"video");export{c as a,s as m};
