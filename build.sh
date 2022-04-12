@@ -9,7 +9,7 @@ PLATFORM=$(node -e "console.log(require('os').platform())")
 init(){
 cd $1
 if [ ! -d "node_modules" ]; then
-yarn --prefer-offline --frozen-lockfile
+yarn
 fi
 cd $DIR
 }
