@@ -41,7 +41,7 @@ DIR = thisdir(import.meta);
     'entitlements-inherit': entitlements
   });
   console.log('signed');
-  if (app.indexOf('-mas-' > 0)) {
+  if (~app.indexOf('-mas-')) {
     return;
   }
   console.log('开始公证');
