@@ -4,7 +4,7 @@ DIR=$(dirname $(realpath "$0"))
 cd $DIR
 set -ex
 
-gsync
+git pull
 
 if [ ! -f "./pkg/ico/app.icns" ]; then
 ./pkg/ico.xsh
