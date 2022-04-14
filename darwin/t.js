@@ -1,1 +1,1 @@
-import{i as s}from"./7.js";import{c as t}from"./9.js";var o,i;({rec:i}=s);o="src,audio,video,area".split(",");var f=()=>{var a;i(...function(){var r;r=[];for(a of o)r.push(t[a]);return r}())};export{f as s};
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});var r=require("electron"),t=require("path"),e="izhenxiang",a=process.env[e+"_root"]||t.join(r.app.getPath("userData"),e);exports.ROOT=a;
