@@ -1,13 +1,38 @@
-import { c as r } from "./g.js";
-import { c, b as e, d as n, _ as t } from "./f.js";
-import "./4.js";
-import "./t.js";
-var m = { components: { confirm: r }, setup: () => {} };
-function a(s, p) {
-	const o = e("confirm");
+import { i as s } from "./3.js";
+var m = (e, a) => {
+	var r;
 	return (
-		n(), c(o, { h1: "确认取消本次录制吗？", no: "继续录制", tip: "已录制部分将被清除", yes: "取消录制" })
+		r = 9437184 / (e * a), r < 1 && (e = parseInt(e * r), a = parseInt(a * r)), [
+			e,
+			a,
+		]
 	);
-}
-var d = t(m, [["render", a]]);
-export { d as default };
+},
+	c;
+({ recbar: c } = s);
+var p = async () => {
+	var e, a, r, i, o, t, d;
+	({ width: d, height: r } = screen), [t, a] = m(d * 2, r * 2), localStorage.ppi =
+		t / d, o =
+		{
+			audio: { mandatory: { chromeMediaSource: "desktop" } },
+			video: {
+				mandatory: {
+					maxFrameRate: 30,
+					minWidth: t,
+					minHeight: a,
+					maxWidth: t,
+					maxHeight: a,
+					chromeMediaSourceId: await c.screen_source(),
+					chromeMediaSource: "desktop",
+				},
+			},
+		}, e = () => navigator.mediaDevices.getUserMedia(o);
+	try {
+		i = await e();
+	} catch {
+		delete o.audio, i = await e();
+	}
+	return i;
+};
+export { p as v };

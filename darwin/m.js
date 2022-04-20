@@ -1,4 +1,4 @@
 "use strict";
 require("path");
 require("fs");
-require("./-.js");
+require("./b.js");
