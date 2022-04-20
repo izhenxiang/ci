@@ -1,1 +1,1 @@
-export const appBundleId = 'izhenxiang.com'
+export const appBundleId = "izhenxiang.com";

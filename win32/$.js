@@ -1,1 +1,2 @@
-var a="https://izhenxiang.com/";export{a as H};
+var a = "https://izhenxiang.com/";
+export { a as H };
