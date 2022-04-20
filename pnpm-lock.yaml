@@ -4,12 +4,12 @@ specifiers:
   '@rmw/coffee-loader': ^0.0.4
   '@rmw/source-map-support': ^0.5.24
   coffeescript: ^2.6.1
-  electron-packager: ^15.4.0
+  electron-packager: ^15.5.0
 
 dependencies:
   '@rmw/coffee-loader': 0.0.4
   '@rmw/source-map-support': 0.5.24
-  electron-packager: 15.4.0
+  electron-packager: 15.5.0
 
 devDependencies:
   coffeescript: 2.6.1
@@ -30,6 +30,21 @@ packages:
     optionalDependencies:
       global-agent: 3.0.0
       global-tunnel-ng: 2.7.1
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  /@electron/universal/1.2.1:
+    resolution: {integrity: sha512-7323HyMh7KBAl/nPDppdLsC87G6RwRU02dy5FPeGB1eS7rUePh55+WNWiDPLhFQqqVPHzh77M69uhmoT8XnwMQ==}
+    engines: {node: '>=8.6'}
+    dependencies:
+      '@malept/cross-spawn-promise': 1.1.1
+      asar: 3.1.0
+      debug: 4.3.3
+      dir-compare: 2.4.0
+      fs-extra: 9.1.0
+      minimatch: 3.1.2
+      plist: 3.0.4
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -156,6 +171,11 @@ packages:
     resolution: {integrity: sha1-DTM+PwDqxQqhRUq9MO+MKl2ackI=}
     dev: false
 
+  /buffer-equal/1.0.0:
+    resolution: {integrity: sha1-WWFrSYME1Var1GaWayLu2j7KX74=}
+    engines: {node: '>=0.4.0'}
+    dev: false
+
   /buffer-fill/1.0.0:
     resolution: {integrity: sha1-+PeLdniYiO858gXNY39o5wISKyw=}
     dev: false
@@ -191,6 +211,18 @@ packages:
     resolution: {integrity: sha512-GG5nkF93qII8HmHqnnibkgpp/SV7PSnSPiWsbinwya7nNOe95aE/x2xrKZJFks8Qpko3TNrC+/LahaKgrz5YCg==}
     engines: {node: '>=6'}
     hasBin: true
+
+  /colors/1.0.3:
+    resolution: {integrity: sha1-BDP0TYCWgP3rYO0mDxsMJi6CpAs=}
+    engines: {node: '>=0.1.90'}
+    dev: false
+
+  /commander/2.9.0:
+    resolution: {integrity: sha1-nJkJQXbhIkDLItbFFGCYQA/g99Q=}
+    engines: {node: '>= 0.6.x'}
+    dependencies:
+      graceful-readlink: 1.0.1
+    dev: false
 
   /commander/5.1.0:
     resolution: {integrity: sha512-P0CysNDQ7rtVw4QIQtm+MRxV66vKFSvlsQvGYXZWR3qFU0jlMKHZZZgw8e+8DSah4UDKMqnknRDQz+xuQXQ/Zg==}
@@ -280,6 +312,16 @@ packages:
     dev: false
     optional: true
 
+  /dir-compare/2.4.0:
+    resolution: {integrity: sha512-l9hmu8x/rjVC9Z2zmGzkhOEowZvW7pmYws5CWHutg8u1JgvsKWMx7Q/UODeu4djLZ4FgW5besw5yvMQnBHzuCA==}
+    hasBin: true
+    dependencies:
+      buffer-equal: 1.0.0
+      colors: 1.0.3
+      commander: 2.9.0
+      minimatch: 3.0.4
+    dev: false
+
   /duplexer3/0.1.4:
     resolution: {integrity: sha1-7gHdHKwO08vH/b6jfcCo8c4ALOI=}
     dev: false
@@ -307,12 +349,13 @@ packages:
       plist: 3.0.4
     dev: false
 
-  /electron-packager/15.4.0:
-    resolution: {integrity: sha512-JrrLcBP15KGrPj0cZ/ALKGmaQ4gJkn3mocf0E3bRKdR3kxKWYcDRpCvdhksYDXw/r3I6tMEcZ7XzyApWFXdVpw==}
+  /electron-packager/15.5.0:
+    resolution: {integrity: sha512-8mITLQgTm9xdrO8XL/PsK0EZGU7zK/ay7TI8M1C9pc1UZ++HlaWQJBRJHlOXf4TL/7FsiF4OciEhiqhMn+LKQQ==}
     engines: {node: '>= 10.12.0'}
     hasBin: true
     dependencies:
       '@electron/get': 1.13.1
+      '@electron/universal': 1.2.1
       asar: 3.1.0
       cross-spawn-windows-exe: 1.2.0
       debug: 4.3.3
@@ -568,6 +611,10 @@ packages:
     resolution: {integrity: sha512-NtNxqUcXgpW2iMrfqSfR73Glt39K+BLwWsPs94yR63v45T0Wbej7eRmL5cWfwEgqXnmjQp3zaJTshdRW/qC2ZQ==}
     dev: false
 
+  /graceful-readlink/1.0.1:
+    resolution: {integrity: sha1-TK+tdrxi8C+gObL5Tpo906ORpyU=}
+    dev: false
+
   /has/1.0.3:
     resolution: {integrity: sha512-f2dvO0VU6Oej7RkWJGrehjbzMAjFp5/VKPp5tTpWIV4JHHZK1/BxbFRtf/siA2SWTe09caDmVtYYzWEIbBS4zw==}
     engines: {node: '>= 0.4.0'}
@@ -722,6 +769,12 @@ packages:
   /mimic-response/1.0.1:
     resolution: {integrity: sha512-j5EctnkH7amfV/q5Hgmoal1g2QHFJRraOtmx0JpIqkxhBhI/lJSl1nMpQ45hVarwNETOoWEimndZ4QK0RHxuxQ==}
     engines: {node: '>=4'}
+    dev: false
+
+  /minimatch/3.0.4:
+    resolution: {integrity: sha512-yJHVQEhyqPLUTgt9B83PXu6W3rx4MvvHvSUvToogpwoGDOUQ+yDrR0HRot+yOCdCO7u4hX3pWft6kWBBcqh0UA==}
+    dependencies:
+      brace-expansion: 1.1.11
     dev: false
 
   /minimatch/3.1.2:
