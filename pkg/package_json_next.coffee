@@ -28,17 +28,19 @@ write = (package_json, version)=>
 
 
 do =>
-  switch process.argv[2]
-    when 'ol'
-      pos = 1
-    when 'dev'
-      pos = 2
-    else
-      return
 
   package_json = JSON.parse await read fp_app_package
   {version:version_now} = package_json
   version = version_now.split('.').map((x)=>parseInt(x))
+
+  switch process.argv[2]
+    when 'ol'
+      pos = 1
+      version[2] = 0
+    when 'dev'
+      pos = 2
+    else
+      return
 
   while pos
     if version[pos] > 65535
