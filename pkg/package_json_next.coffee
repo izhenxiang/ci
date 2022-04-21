@@ -9,7 +9,7 @@ read = (fp)=>
   readFile(fp,'utf8')
 
 pkg_json = 'package.json'
-fp_app_package = join DIR,'pkg/app/'+pkg_json
+fp_app_package = join DIR,'app/'+pkg_json
 
 write = (package_json, version)=>
   package_json.version = version

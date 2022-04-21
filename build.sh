@@ -14,7 +14,6 @@ fi
 cd $DIR
 }
 
-init $PLATFORM
 init pkg
 init .
 
