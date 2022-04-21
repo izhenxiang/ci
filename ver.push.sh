@@ -19,6 +19,7 @@ git commit -m "v$VER" || true
 git tag -d v$VER | true
 git tag v$VER
 git push origin v$VER -f
+git push
 }
 
 cd $DIR/dist
@@ -28,4 +29,3 @@ cd $DIR
 git add -u
 git add ver/$VER.md || true
 tag
-git push
