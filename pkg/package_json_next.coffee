@@ -11,7 +11,6 @@ read = (fp)=>
 pkg_json = 'package.json'
 fp_app_package = join DIR,'pkg/app/'+pkg_json
 
-
 write = (package_json, version)=>
   package_json.version = version
   fp = join(DIR,'ver', version+'.md')
@@ -29,11 +28,18 @@ write = (package_json, version)=>
 
 
 do =>
+  switch process.argv[2]
+    when 'ol'
+      pos = 1
+    when 'dev'
+      pos = 2
+    else
+      return
+
   package_json = JSON.parse await read fp_app_package
   {version:version_now} = package_json
   version = version_now.split('.').map((x)=>parseInt(x))
 
-  pos = 2
   while pos
     if version[pos] > 65535
       version[pos] = 0

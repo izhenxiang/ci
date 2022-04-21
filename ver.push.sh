@@ -14,12 +14,18 @@ cd pkg/app
 
 VER=`cat package.json| jq '.version' -r`
 
-cd $DIR
-git add -u
-git add ver/$VER.md
+tag(){
 git commit -m "v$VER" || true
-
 git tag -d v$VER | true
 git tag v$VER
 git push origin v$VER -f
+}
+
+cd $DIR/dist
+tag
+
+cd $DIR
+git add -u
+git add ver/$VER.md
+tag
 git push

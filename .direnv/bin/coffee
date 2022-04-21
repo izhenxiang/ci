@@ -1,9 +1,18 @@
 #!/usr/bin/env sh
 
-_DIR=$(dirname $(realpath "$0"))
+DIR=$(realpath $(dirname $(realpath "$0"))/../..)
 
-filepath=$(realpath $@)
+export NODE_PATH="$DIR/node_modules:$NODE_PATH"
 
-cd $(dirname $filepath)/..
+if [ $1 ];then
+filepath=$(realpath $1)
+fi
 
-exec node  --trace-warnings --es-module-specifier-resolution=node --trace-uncaught --expose-gc --experimental-loader "@rmw/coffee-loader" --unhandled-rejections=strict $filepath
+exec node  --trace-warnings \
+  --es-module-specifier-resolution=node \
+  --trace-uncaught \
+  --experimental-fetch \
+  --expose-gc \
+  --experimental-loader \
+  "@rmw/coffee-loader" \
+  --unhandled-rejections=strict $filepath ${@:2:$#}
