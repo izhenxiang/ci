@@ -42,8 +42,8 @@ app_package_json = "package.json"
 
 PKG_JSON = join(PKG,'app',app_package_json)
 
-def build(ico, args=""):
-  cd @(APP)
+def build(ico,arch, args=""):
+  cd dist/@(APP)-@(arch)
   exe = f"npx --yes electron-packager . --overwrite  --icon={PKG}/ico/app.{ico} --prune=true --out={RELEASE} --asar --name {NAME} --appBundleId {appBundleId}".split(' ')
   @(exe+args.split(' '))
   cd @(ROOT)
@@ -56,6 +56,7 @@ makedirs(f"{RELEASE}/{VERSION}", exist_ok=True)
 def _darwin(platform, arch):
   build(
     "icns",
+    arch,
     f"--platform={platform} --arch={arch}"
   )
   if FOR_AUTO_UPDATE:
@@ -135,7 +136,8 @@ def darwin():
 
 def win():
 
-  build("ico")
+  arch = 'x64'
+  build("ico", arch)
 
   inno = "inno.iss"
   write(
@@ -143,7 +145,6 @@ def win():
     Template(read(join(TEMPLATE,inno))).render(**PACKAGE)
   )
 
-  arch = 'x64'
 
   cd @(RELEASE)
   shutil.rmtree(NAME, ignore_errors=True)
