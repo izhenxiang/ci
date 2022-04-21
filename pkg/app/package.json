@@ -1,9 +1,9 @@
 {
   "main": "m.js",
   "productName": "帧享",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "devDependencies": {
-    "electron": "=18.0.4"
+    "electron": "=18.1.0"
   },
   "hardenedRuntime": true,
   "extendInfo": {
