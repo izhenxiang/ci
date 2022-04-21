@@ -1,21 +1,5 @@
-import { c as r } from "./s.js";
-import { d as e, e as n, a as c, _ as t } from "./g.js";
-import "./4.js";
-import "./a.js";
-var a = { components: { confirm: r }, setup: () => {} };
-function m(s, p) {
-	const o = n("confirm");
-	return (
-		c(), e(
-			o,
-			{
-				h1: "\u786E\u8BA4\u53D6\u6D88\u672C\u6B21\u5F55\u5236\u5417\uFF1F",
-				no: "\u7EE7\u7EED\u5F55\u5236",
-				tip: "\u5DF2\u5F55\u5236\u90E8\u5206\u5C06\u88AB\u6E05\u9664",
-				yes: "\u53D6\u6D88\u5F55\u5236",
-			},
-		)
-	);
-}
-var d = t(a, [["render", m]]);
-export { d as default };
+import{s as c,b as F,o as L,O as R,l as P,c as f,F as T,R as A,g as M,f as n,i as D,t as V,m as p,p as W,j as q,e as G,a as m,_ as H}from"./a.js";import{i as b}from"./4.js";import{b as w}from"./..js";import{O as J}from"./1.js";import{d as K}from"./_.js";/* empty css        */import{c as i}from"./g.js";import{D as Q}from"./5.js";import{z as U}from"./0.js";import"./b.js";import"./.js";import"./j.js";var $;$=e=>(e+"").padStart(2,"0");var X=()=>{var e,a,t,r;return e=c("00"),a=c("00"),[r,t]=(()=>{var s,o;return o=0,s=void 0,[()=>{s=setInterval(()=>{++o,e.value=$(parseInt(o/60)),a.value=$(o%60)},1e3)},()=>{clearInterval(s)}]})(),[e,a,r,t]},g,B,h,k,E,u,_,j,I,y,S,d;({recbar:_}=b);[E,j,S,y]=X();I=e=>{var a,t,r;t=e.split(`
+`),r=[];for(a of t)r.push(a.split(" "));return r};u=c(!1);g=!1;h=c();B=e=>{[S,y][e-0]()};d=()=>{var e;({value:e}=u),e=!e,w.pause(u.value=e),g&&B(e)};k={pause:d,reset:()=>{g&&(u.value||d(),R(async()=>await b.confirm.show("reset")?w.reset():d()))},cancel:async()=>{if(!g){await _.cancel();return}u.value||d(),R(async()=>await b.confirm.show("cancel")?w.cancel():d())},stop:()=>{w.stop(),y()}};J.start=()=>{S(),g=!0,h.value.className=""};i.src!=="camera"&&P(()=>import("./k.js"),["k.js","7.js","1.js","i.js","4.js","g.js",".js","..js","j.js","a.js","5.css","$.js","q.js","2.js"]);var Y={components:{zAudio:U},setup:()=>{var e,a,t,r,s,o,v,N,O;for(r=I("video \u6444\u50CF\u5934"),N=F(I(`pause \u6682\u505C
+stop \u7ED3\u675F\u5F55\u5236
+reset \u91CD\u65B0\u5F55\u5236
+cancel \u53D6\u6D88\u5F55\u5236`)),O=l=>()=>{i[l]=i[l]?"":localStorage[l],!u.value&&!i.video&&!i.audio&&i.src==="camera"&&k.pause()},v=["audio","video"],t=0,s=v.length;t<s;t++)a=v[t],k[a]=O(a);return e=c(),o=c(),L(()=>{K(o.value)}),{go:async l=>{var C;if(["pen","rect","txt"].indexOf(l)+1){if({value:C}=e,C!==l){if(Q.shape=e.value=l,C)return}else{e.value="",await _.draw_x();return}await _.draw();return}(k[l]||_[l])()},left:r,nav:o,right:N,code:h,minute:E,second:j,pause:u,config:i,draw:e}}};const z=e=>(W("data-v-495ffc22"),e=e(),q(),e),Z=["title","onClick"],x=z(()=>n("b",null,null,-1)),ee={class:"pause",ref:"code"},ae=z(()=>n("span",null,":",-1)),re=["title","onClick"],te={class:"draw"},se=z(()=>n("b",null,null,-1));function oe(e,a){const t=G("z-audio");return m(),f("nav",{class:p({pause:e.pause}),ref:"nav"},[(m(!0),f(T,null,A(e.left,([r,s],o)=>(m(),f("a",{class:p([r,e.config[r]?"":"x"]),title:s,onClick:v=>e.go(r)},null,10,Z))),256)),M(t,{onClick:a[0]||(a[0]=r=>e.go("audio"))}),x,n("code",ee,[D(V(e.minute),1),ae,D(V(e.second),1)],512),(m(!0),f(T,null,A(e.right,([r,s],o)=>(m(),f("a",{class:p([r]),title:s,onClick:v=>e.go(r)},null,10,re))),256)),n("div",te,[se,n("a",{class:p(["pen",{now:e.draw=="pen"}]),onClick:a[1]||(a[1]=r=>e.go("pen")),title:"\u753B\u7B14"},null,2),n("a",{class:p(["rect",{now:e.draw=="rect"}]),onClick:a[2]||(a[2]=r=>e.go("rect")),title:"\u753B\u6846"},null,2),n("a",{class:p(["txt",{now:e.draw=="txt"}]),onClick:a[3]||(a[3]=r=>e.go("txt")),title:"\u6587\u5B57"},null,2)]),n("a",{class:"left",onClick:a[4]||(a[4]=r=>e.go("left")),title:"\u6536\u8D77"}),n("a",{class:"expand",onClick:a[5]||(a[5]=r=>e.go("expand"))})],2)}var we=H(Y,[["render",oe],["__scopeId","data-v-495ffc22"]]);export{we as default};
