@@ -18,17 +18,15 @@ write = (package_json, version)=>
   package_json.version = version
   fp = join(DIR,'ver', version+'.md')
   if not existsSync fp
-    if not 线上版
-      return true
-    console.error fp,'not exist'
-    return false
-
+    if 线上版
+      console.error fp,'not exist'
+      return false
+  else
+    package_json.description = await read fp
   await writeFile(
     fp_app_package
     JSON.stringify package_json
   )
-  package_json.description = await read fp
-
   return true
 
 do =>
