@@ -106,7 +106,7 @@ export default main = =>
   _platform = platform()
 
   {productName, version} = JSON.parse await readFile(
-    join DIR,_platform,'package.json'
+    join DIR,'app/package.json'
     'utf8'
   )
   switch _platform
