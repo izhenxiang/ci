@@ -75,5 +75,6 @@ jobs:
           accessKeySecret: ${{ secrets.ACCESSKEYSECRET }}
           #PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
           FEISHU_BOT: ${{ secrets.FEISHU_BOT }}
-        run: ./dist.sh
+        run: |
+          ./dist.sh
         shell: bash
