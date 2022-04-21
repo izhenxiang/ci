@@ -33,17 +33,16 @@ def write(fp,txt):
     o.write(txt)
 
 
-APP = join(ROOT,$(node -e "console.log(require('os').platform())").strip('\n'))
 PKG = join(ROOT,"pkg")
 TEMPLATE = join(PKG,"template")
 RELEASE = join(ROOT,"release")
 
 app_package_json = "package.json"
 
-PKG_JSON = join(PKG,'app',app_package_json)
+PKG_JSON = join(ROOT,'app',app_package_json)
 
 def build(ico,arch, args=""):
-  cd dist/@(APP)-@(arch)
+  cd dist/@(sys.platform)-@(arch)
   exe = f"npx --yes electron-packager . --overwrite  --icon={PKG}/ico/app.{ico} --prune=true --out={RELEASE} --asar --name {NAME} --appBundleId {appBundleId}".split(' ')
   @(exe+args.split(' '))
   cd @(ROOT)
@@ -187,8 +186,6 @@ def _platform():
     platform = platform[:5]
   elif platform.startswith("win"):
     platform = platform[:3]
-
-
   return platform
 
 locals()[_platform()]()

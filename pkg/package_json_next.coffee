@@ -11,10 +11,15 @@ read = (fp)=>
 pkg_json = 'package.json'
 fp_app_package = join DIR,'app/'+pkg_json
 
+dist = process.argv[2]
+线上版 = dist == 'ol'
+
 write = (package_json, version)=>
   package_json.version = version
   fp = join(DIR,'ver', version+'.md')
   if not existsSync fp
+    if not 线上版
+      return true
     console.error fp,'not exist'
     return false
 
@@ -26,21 +31,17 @@ write = (package_json, version)=>
 
   return true
 
-
 do =>
 
   package_json = JSON.parse await read fp_app_package
   {version:version_now} = package_json
   version = version_now.split('.').map((x)=>parseInt(x))
 
-  switch process.argv[2]
-    when 'ol'
-      pos = 1
-      version[2] = 0
-    when 'dev'
-      pos = 2
-    else
-      return
+  if 线上版
+    pos = 1
+    version[2] = 0
+  else
+    pos = 2
 
   while pos
     if version[pos] > 65535
