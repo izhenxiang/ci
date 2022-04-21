@@ -5,12 +5,14 @@ cd $DIR
 set -ex
 
 if [ ! -d dist ] ; then
-git clone https://e.coding.net/izhenxiang/desk/dist.git --depth=1
+tag=$(node -e "console.log(require('./app/package.json').version)")
+git clone --depth=1 --branch v$tag https://e.coding.net/izhenxiang/desk/dist.git
 else
 cd dist
 git -C dist pull
 fi
 
 ./build.sh
+
 
 .direnv/bin/coffee ./pkg/auto_update.coffee
