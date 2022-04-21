@@ -109,33 +109,36 @@ export default main = =>
     join DIR,_platform,'package.json'
     'utf8'
   )
-  console.log version
-
   switch _platform
     when 'darwin'
       asar_path = productName+'.app/Contents/Resources'
+      arch_li = ['x64','arm64']
     when 'win32'
       asar_path = 'resources'
+      arch_li = ['x64']
 
-  app = join DIR,"release/#{productName}-#{_platform}-x64/#{asar_path}/app.asar"
+  for arch from arch_li
+    app = join DIR,"release/#{productName}-#{_platform}-#{arch}/#{asar_path}/app.asar"
 
-  outdir = join tmpdir(), await hash(app)
+    outdir = join tmpdir(), await hash(app)
 
-  try
-    ver = await auto_update app, outdir
-  finally
-    await rm(outdir,recursive: true, force: true)
+    try
+      ver = await auto_update app, outdir
+    catch err
+      throw err
+    finally
+      await rm(outdir,recursive: true, force: true)
 
-  _platform += '/'
-  v = ver_bin version
-  await OSS._.put(
-    _platform+encode(v)
-    ver
-  )
-  await OSS._.put(
-    _platform+"v"
-    v
-  )
+    prefix = platform+'/'+arch+'/'
+    v = ver_bin version
+    await OSS._.put(
+      prefix+encode(v)
+      ver
+    )
+    await OSS._.put(
+      prefix+"v"
+      v
+    )
   return
 
 do =>
