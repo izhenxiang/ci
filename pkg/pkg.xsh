@@ -43,6 +43,7 @@ PKG_JSON = join(ROOT,'app',app_package_json)
 
 def build(ico,arch, args=""):
   cd dist/@(sys.platform)-@(arch)
+  yarn
   exe = f"npx --yes electron-packager . --overwrite  --icon={PKG}/ico/app.{ico} --prune=true --out={RELEASE} --asar --name {NAME} --appBundleId {appBundleId}".split(' ')
   @(exe+args.split(' '))
   cd @(ROOT)
