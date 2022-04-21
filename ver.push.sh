@@ -10,7 +10,7 @@ if [ ! -f "./pkg/ico/app.icns" ]; then
 ./pkg/ico.xsh
 fi
 
-cd pkg/app
+cd app
 
 VER=`cat package.json| jq '.version' -r`
 
@@ -26,6 +26,6 @@ tag
 
 cd $DIR
 git add -u
-git add ver/$VER.md
+git add ver/$VER.md || true
 tag
 git push
