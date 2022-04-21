@@ -1,5 +1,15 @@
-<<<<<<< HEAD
-{"main":"m.js","productName":"帧享","version":"0.2.1","devDependencies":{"electron":"=18.0.4"},"hardenedRuntime":true,"extendInfo":{"NSMicrophoneUsageDescription":"请授权麦克风","NSCameraUsageDescription":"请授权摄像头"},"license":"UNLICENSED","description":"* 修复已知的部分问题\n"}
-=======
-{"main":"m.js","productName":"帧享","version":"0.3.0","devDependencies":{"electron":"=18.1.0"},"hardenedRuntime":true,"extendInfo":{"NSMicrophoneUsageDescription":"请授权麦克风","NSCameraUsageDescription":"请授权摄像头"},"license":"UNLICENSED","description":"* 添加窗口录制，可以选择录制指定的应用窗口\n* 添加文字标注，录制时可以点击操作条上的T按钮，添加文字标注\n* 修复已知的部分问题\n"}
->>>>>>> d2a0eb779e1b435582356ede7be6383aaa1f651a
+{
+  "main": "m.js",
+  "productName": "帧享",
+  "version": "0.3.0",
+  "devDependencies": {
+    "electron": "=18.1.0"
+  },
+  "hardenedRuntime": true,
+  "extendInfo": {
+    "NSMicrophoneUsageDescription": "请授权麦克风",
+    "NSCameraUsageDescription": "请授权摄像头"
+  },
+  "license": "UNLICENSED",
+  "description": ""
+}
