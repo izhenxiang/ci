@@ -41,10 +41,6 @@ RELEASE = join(ROOT,"release")
 app_package_json = "package.json"
 
 PKG_JSON = join(PKG,'app',app_package_json)
-APP_JSON = join(APP,app_package_json)
-
-if not exists(APP_JSON):
-  cp @(PKG_JSON) @(APP_JSON)
 
 def build(ico, args=""):
   cd @(APP)
@@ -52,7 +48,7 @@ def build(ico, args=""):
   @(exe+args.split(' '))
   cd @(ROOT)
 
-PACKAGE = loads(read(APP_JSON))
+PACKAGE = loads(read(PKG_JSON))
 
 VERSION = PACKAGE['version']
 makedirs(f"{RELEASE}/{VERSION}", exist_ok=True)
