@@ -36,7 +36,7 @@ do =>
   version = version_now.split('.').map((x)=>parseInt(x))
 
   if 线上版
-    pos = 1
+    pos = 2
     version[2] = 0
   else
     pos = 2
