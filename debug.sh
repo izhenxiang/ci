@@ -7,4 +7,4 @@ set -ex
 NAME=$(cat pkg/package.json | jq -r ".productName")
 
 AUTO_UPDATE=1 ./pkg/pkg.xsh
-exec ./release/$NAME-darwin-x64/帧享.app/Contents/MacOS/$NAME
+exec ./release/$NAME-darwin-x64/帧想.app/Contents/MacOS/$NAME

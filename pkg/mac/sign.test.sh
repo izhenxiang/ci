@@ -5,4 +5,4 @@ cd $DIR
 set -ex
 
 ./import.sign.sh
-node ./sign.js ../../release/帧享-darwin-x64/帧享.app
+node ./sign.js ../../release/帧想-darwin-x64/帧想.app

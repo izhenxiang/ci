@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-NAME = "帧享"
+NAME = "帧想"
 appBundleId = "izhenxiang.com"
-
 
