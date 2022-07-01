@@ -6,7 +6,7 @@ set -ex
 
 if [ ! -d dist ] ; then
 tag=$(node -e "console.log(require('./app/package.json').version)")
-git clone --depth=1 --branch v$tag https://e.coding.net/izhenxiang/desk/dist.git
+git clone --depth=1 --branch v$tag https://github.com/izhenxiang/dist.git
 else
 cd dist
 git -C dist pull
