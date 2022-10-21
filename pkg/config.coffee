@@ -1,1 +1,1 @@
-config.dev.coffee
+config.ol.coffee
