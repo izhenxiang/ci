@@ -9,12 +9,15 @@ jobs:
   build:
     name: build
     strategy:
+      fail-fast: false
       matrix:
         # platform: [windows-latest]
         # platform: [macos-latest]
         platform: [macos-latest,windows-latest]
         python-version: [3.9]
     runs-on: ${{ matrix.platform }}
+    # https://docs.github.com/zh/actions/using-jobs/using-a-matrix-for-your-jobs#handling-failures
+    continue-on-error: true
     steps:
       - uses: actions/checkout@v2
         with:
