@@ -1,1 +1,1 @@
-{"main":"m.js","productName":"帧想","version":"0.5.81","devDependencies":{"electron":"=18.2.0"},"hardenedRuntime":true,"extendInfo":{"NSMicrophoneUsageDescription":"请授权麦克风","NSCameraUsageDescription":"请授权摄像头"},"license":"UNLICENSED","description":"优化区域录制的采集效果\n提升部分操作体验细节\n修复了一些已知的问题\n"}
+{"main":"m.js","productName":"帧想","version":"0.5.82","devDependencies":{"electron":"=18.2.0"},"hardenedRuntime":true,"extendInfo":{"NSMicrophoneUsageDescription":"请授权麦克风","NSCameraUsageDescription":"请授权摄像头"},"license":"UNLICENSED","description":"优化区域录制的采集效果\n提升部分操作体验细节\n修复了一些已知的问题\n"}
